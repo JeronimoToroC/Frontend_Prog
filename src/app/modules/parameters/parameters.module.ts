@@ -69,7 +69,7 @@ import { RemoveFacultadComponent } from './facultad/remove-facultad/remove-facul
     FacultadCreationComponent,  
     FacultadEditionComponent,
     FacultadListComponent,    
-    FacultadPhotosComponent,
+    FacultadPhotosComponent, 
     RemoveFacultadComponent,
   ],
   imports: [
