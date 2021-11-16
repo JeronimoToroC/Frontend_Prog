@@ -9,6 +9,7 @@ import { ResetPasswordComponent } from './general/reset-password/reset-password.
 import { UserCreationComponent } from './users/user-creation/user-creation.component';
 import { UserEditionComponent } from './users/user-edition/user-edition.component';
 import { RemoveUserComponent } from './users/remove-user/remove-user.component';
+import { UserListComponent } from './users/user-list/user-list.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { RemoveUserComponent } from './users/remove-user/remove-user.component';
     ResetPasswordComponent,
     UserCreationComponent,
     UserEditionComponent,
-    RemoveUserComponent
+    RemoveUserComponent,
+    UserListComponent
   ],
   imports: [
     CommonModule,
