@@ -1,0 +1,51 @@
+import { Injectable } from '@angular/core';
+import { SessionDataModel } from 'src/app/models/session-data.model';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class LocalStorageService {
+
+  constructor() { }
+
+  SaveSessionData(data: SessionDataModel): boolean{
+    let currentData = localStorage.getItem("session-info");
+    if(currentData){
+      return false;
+    }else{
+      let sessionDataStiring = JSON.stringify(data);
+      localStorage.setItem("session-info", sessionDataStiring);
+      return true;
+    }
+  }  
+
+    RemoveSessionData(): boolean{
+      let currentData = localStorage.getItem("session-info");
+    if(currentData){
+      localStorage.removeItem("session-info");
+      return true;
+    }else{
+      return false;
+    }
+  }
+
+  GetToken(): string{
+    let currentData = localStorage.getItem("session-info");
+    if(currentData){
+      let sessionDataJson = JSON.parse(currentData);
+      return sessionDataJson.tk;
+    }else{
+      return "";
+    }
+  }
+  
+  GetSessionInfo(): SessionDataModel{
+    let currentData = localStorage.getItem("session-info");
+    if(currentData){
+      let sessionDataJson = JSON.parse(currentData);
+      return sessionDataJson;
+    }else{
+      return new SessionDataModel();
+    }
+  }
+}
