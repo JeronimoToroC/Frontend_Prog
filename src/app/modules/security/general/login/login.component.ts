@@ -1,6 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ConfigurationData } from 'src/app/config/ConfigurationData';
+import { UserCredentialsModel } from 'src/app/models/security/user-credentials.model';
+import { SecurityService } from 'src/app/services/shared/security.service';
+import { MD5 } from 'crypto-js';
+
+var CryptoJS = require("crypto-js");
 
 declare const ShowGeneralMessage: any;
 
@@ -14,7 +19,8 @@ export class LoginComponent implements OnInit {
   dataForm: FormGroup = new FormGroup({});
 
   constructor(
-    private fb:FormBuilder
+    private fb:FormBuilder,
+    private securityService: SecurityService
   ) { }
 
   ngOnInit(): void {
@@ -32,7 +38,15 @@ export class LoginComponent implements OnInit {
     if(this.dataForm.invalid){
       ShowGeneralMessage(ConfigurationData.INVALID_FORM_MESSAGE);
     }else{
-      ShowGeneralMessage(ConfigurationData.VALID_FORM_MESSAGE);
+      let credentials = new UserCredentialsModel();
+      credentials.username = this.GetDF["username"].value;
+      credentials.password = MD5(this.GetDF["password"].value).toString();
+      this.securityService.Login(credentials).suscribe((data: any) => {
+
+      },
+      (error: any) => {
+
+      });
     }
   }
 
