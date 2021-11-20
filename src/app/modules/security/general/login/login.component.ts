@@ -5,8 +5,6 @@ import { UserCredentialsModel } from 'src/app/models/user-credentials.model';
 import { SecurityService } from 'src/app/services/security.service';
 import { MD5 } from 'crypto-js';
 
-var CryptoJS = require("crypto-js");
-
 declare const ShowGeneralMessage: any;
 
 @Component({
