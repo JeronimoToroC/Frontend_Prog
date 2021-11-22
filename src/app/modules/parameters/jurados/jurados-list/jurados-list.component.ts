@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { JuradosModel } from 'src/app/models/parameters/jurados.model';
+import { JuradosService } from 'src/app/services/parameters/jurados.service';
 
 @Component({
   selector: 'app-jurados-list',
@@ -7,9 +9,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class JuradosListComponent implements OnInit {
 
-  constructor() { }
+  recordList: JuradosModel[] = [];
+  
+  constructor(
+    private service: JuradosService
+  ) { }
 
   ngOnInit(): void {
+    this.ShowRecordList();
+  }
+
+  ShowRecordList(){
+    this.service.GetRecordList().subscribe({
+      next: (data: JuradosModel[]) => {
+        this.recordList = data;
+      } 
+    });
   }
 
 }

@@ -2,8 +2,8 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { ConfigurationData } from 'src/app/config/ConfigurationData';
-import { SessionDataModel } from 'src/app/models/session-data.model';
-import { UserCredentialsModel } from 'src/app/models/user-credentials.model';
+import { SessionDataModel } from 'src/app/models/security/session-data.model';
+import { UserCredentialsModel } from 'src/app/models/security/user-credentials.model';
 import { LocalStorageService } from './local-storage.service';
 
 @Injectable({
