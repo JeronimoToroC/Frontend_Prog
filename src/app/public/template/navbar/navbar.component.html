@@ -4,6 +4,7 @@
       <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
         <li *ngIf="activeSession"><a routerLink="parameters/jurados-list">Jurados</a></li>
+        <li *ngIf="activeSession"><a routerLink="parameters/facultad-list">Facultad</a></li>
         <li *ngIf="!activeSession"><a routerLink="security/login">Iniciar Sesión</a></li>
         <li *ngIf="activeSession"><a routerLink="security/logout">Log out</a></li>
       </ul>
