@@ -24,10 +24,11 @@ export class SecurityService {
     
     if(info.tk) {
       info.isLoggedIn = true;
+
       this.RefreshSessionInfo(info);
       return true;
     }else{
-
+      info.isLoggedIn = false;
       return false;
     }
   }
