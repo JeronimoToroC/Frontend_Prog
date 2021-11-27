@@ -47,7 +47,7 @@ export class FacultadEditionComponent implements OnInit {
     this.service.SearchRecord(id).subscribe({
       next: (data: FacultadModel) => {
         this.GetDF["id"].setValue(data.id);
-        this.GetDF["name"].setValue(data.nombre);
+        this.GetDF["name"].setValue(data.name);
         this.GetDF["codigo"].setValue(data.codigo);
       }
     });
@@ -55,7 +55,7 @@ export class FacultadEditionComponent implements OnInit {
 
   SaveRecord(){
     let model = new FacultadModel();
-    model.nombre = this.GetDF["name"].value;
+    model.name = this.GetDF["name"].value;
     model.codigo = this.GetDF["codigo"].value;
     model.id = this.GetDF["id"].value;
     this.service.EditRecord(model).subscribe({

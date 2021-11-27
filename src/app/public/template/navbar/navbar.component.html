@@ -5,6 +5,7 @@
       <ul class="right hide-on-med-and-down">
         <li *ngIf="activeSession"><a routerLink="parameters/jurados-list">Jurados</a></li>
         <li *ngIf="activeSession"><a routerLink="parameters/facultad-list">Facultad</a></li>
+        <li *ngIf="activeSession"><a routerLink="parameters/comite-list">Comite</a></li>
         <li *ngIf="!activeSession"><a routerLink="security/login">Iniciar Sesión</a></li>
         <li *ngIf="activeSession"><a routerLink="security/logout">Log out</a></li>
       </ul>

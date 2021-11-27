@@ -17,22 +17,22 @@ export class ComiteService {
   }
 
   GetRecordList(): Observable<ComiteModel[]> {
-    return this.http.get<ComiteModel[]>(`${this.url}/comite`);
+    return this.http.get<ComiteModel[]>(`${this.url}/tipo-comites`);
   }
 
   SearchRecord(id: number): Observable<ComiteModel> {
-    return this.http.get<ComiteModel>(`${this.url}/comite/${id}`);
+    return this.http.get<ComiteModel>(`${this.url}/tipo-comites/${id}`);
   }
 
   SaveRecord(data: ComiteModel): Observable<ComiteModel> {
-    return this.http.post<ComiteModel>(`${this.url}/comite`,
+    return this.http.post<ComiteModel>(`${this.url}/tipo-comites`,
       {
         nombre: data.nombre
       });
   }
 
   EditRecord(data: ComiteModel): Observable<ComiteModel> {
-    return this.http.put<ComiteModel>(`${this.url}/comite/${data.id}`,
+    return this.http.put<ComiteModel>(`${this.url}//tipo-comites/${data.id}`,
       {
         nombre: data.nombre
       });
@@ -40,7 +40,7 @@ export class ComiteService {
   
 
   RemoveRecord(id: number): Observable<any> {
-    return this.http.delete<any>(`${this.url}/comite/${id}`);
+    return this.http.delete<any>(`${this.url}//tipo-comites/${id}`);
   }
 
 }

@@ -17,17 +17,17 @@ export class FacultadService {
   }
 
   GetRecordList(): Observable<FacultadModel[]> {
-    return this.http.get<FacultadModel[]>(`${this.url}/facultad`);
+    return this.http.get<FacultadModel[]>(`${this.url}/facultads`);
   }
 
   SearchRecord(id: number): Observable<FacultadModel> {
-    return this.http.get<FacultadModel>(`${this.url}/facultad/${id}`);
+    return this.http.get<FacultadModel>(`${this.url}/facultads/${id}`);
   }
 
   SaveRecord(data: FacultadModel): Observable<FacultadModel> {
-    return this.http.post<FacultadModel>(`${this.url}/facultad`,
+    return this.http.post<FacultadModel>(`${this.url}/facultads`,
       {
-        nombre: data.nombre,
+        nombre: data.name,
         codigo: data.codigo
       });
   }
@@ -35,7 +35,7 @@ export class FacultadService {
   EditRecord(data: FacultadModel): Observable<FacultadModel> {
     return this.http.put<FacultadModel>(`${this.url}/facultad/${data.id}`,
       {
-        nombre: data.nombre,
+        nombre: data.name,
         codigo: data.codigo
       });
   }

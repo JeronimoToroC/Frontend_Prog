@@ -39,7 +39,7 @@ export class FacultadCreationComponent implements OnInit {
 
   SaveRecord(){
     let model = new FacultadModel();
-    model.nombre = this.GetDF["name"].value;
+    model.name = this.GetDF["name"].value;
     model.codigo = this.GetDF["codigo"].value;
     this.service.SaveRecord(model).subscribe({
       next: (data: FacultadModel) => {

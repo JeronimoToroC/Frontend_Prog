@@ -1,5 +1,5 @@
 <br>
-<a routerLink="/parameters/jurados-creation" class="btn btn-success">Agregar Registro</a>
+<a routerLink="/parameters/comite-creation" class="btn btn-success">Agregar Registro</a>
 
 <fieldset>
     <legend>Listado de Comites</legend>
@@ -27,8 +27,8 @@
                     {{r.nombre}}
                 </td>
                 <td>
-                    <a class="btn btn-warning orange" routerLink="/parameters/comite-edition">Editar</a>
-                    <a class="btn btn-warning orange" routerLink="/parameters/remove-comite">Eliminar</a>
+                    <a class="btn btn-warning orange" routerLink="/parameters/comite-edition/{{r.id}}">Editar</a>
+                    <a class="btn btn-warning orange" routerLink="/parameters/remove-comite/{{r.id}}">Eliminar</a>
                 </td>
             </tr>
             <tr>
