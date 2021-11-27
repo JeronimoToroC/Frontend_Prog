@@ -24,6 +24,7 @@ export class FacultadListComponent implements OnInit {
     this.service.GetRecordList().subscribe({
       next: (data:FacultadModel[]) => {
         this.recordList = data;
+        console.log("hola",data)
       } 
     });
   }
