@@ -1,21 +1,21 @@
 <div class="row">
-    <form [formGroup]="dataForm" class="col s12">
-      <div class="row">
-        <div class="input-field col s12">
-          <input formControlName="name" id="txtName" type="text">
-          <label for="txtName">Nombre Completo</label>
-        </div>
+  <form [formGroup]="dataForm" class="col s12">
+    <div class="row">
+      <div class="input-field col s3">
+          <input formControlName="name" id="txtNombre" type="text">
+          <label for="txtNombre">Nombre</label>
       </div>
-      <div class="row">
-        <div class="input-field col s12">
-          <input  id="txtCodigo" type="text">
-          <label formControlName="codigo" for="txtCodigo">Código</label>
-        </div>
+      <div class="input-field col s3">
+          <input formControlName="comite" id="txtComite" type="text">
+          <label for="txtComite">Cómite</label>
       </div>
-      <div class="row">
-        <div class="input-field col s12">
-          <button class="btn btn-success" (click)="SaveRecord()"></button>
-          &nbsp;<a href="" class="btn btn-warning orange" type="button" routerLink="/parameters/facultad-list">Cancelar</a>
-        </div>
-    </form>
+      
   </div>
+    <div class="row">
+      <div class="input-field col s12">
+        <button type="button" class="btn btn-success" (click)="SaveRecord()">Guardar</button>
+        &nbsp;<a class="btn btn-warning orange" routerLink="/parameters/facultad-list">Cancelar</a>
+      </div>
+    </div>
+  </form>
+</div>

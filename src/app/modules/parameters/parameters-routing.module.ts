@@ -39,7 +39,7 @@ const routes: Routes = [
     component: JuradosCreationComponent
   },
   {
-    path:"jurados-edition",
+    path:"jurados-edition/:id",
     component: JuradosEditionComponent
   },
   {
@@ -47,7 +47,7 @@ const routes: Routes = [
     component: JuradosListComponent
   },
   {
-    path:"remove-jurados",
+    path:"remove-jurados/:id",
     component: RemoveJuradosComponent
   },
   {
@@ -55,7 +55,7 @@ const routes: Routes = [
     component: SolicitudCreationComponent
   },
   {
-    path:"solicitud-edition",
+    path:"solicitud-edition/:id",
     component: SolicitudEditionComponent
   },
   {
@@ -63,7 +63,7 @@ const routes: Routes = [
     component: SolicitudListComponent
   },
   {
-    path:"remove-solicitud",
+    path:"remove-solicitud/:id",
     component: RemoveSolicitudComponent
   },
   {
@@ -71,7 +71,7 @@ const routes: Routes = [
     component: ComiteCreationComponent
   },
   {
-    path:"comite-edition",
+    path:"comite-edition/:id",
     component: ComiteEditionComponent
   },
   {
@@ -79,7 +79,7 @@ const routes: Routes = [
     component: ComiteListComponent
   },
   {
-    path:"remove-comite",
+    path:"remove-comite/:id",
     component: RemoveComiteComponent
   },
   {
@@ -87,7 +87,7 @@ const routes: Routes = [
     component: ModalidadCreationComponent
   },
   {
-    path:"modalidad-edition",
+    path:"modalidad-edition/:id",
     component: ModalidadEditionComponent
   },
   {
@@ -95,7 +95,7 @@ const routes: Routes = [
     component: ModalidadListComponent
   },
   {
-    path:"remove-modalidad",
+    path:"remove-modalidad/:id",
     component: RemoveModalidadComponent
   },
   {
@@ -103,7 +103,7 @@ const routes: Routes = [
     component: ProponenteCreationComponent
   },
   {
-    path:"proponente-edition",
+    path:"proponente-edition/:id",
     component: ProponenteEditionComponent
   },
   {
@@ -111,7 +111,7 @@ const routes: Routes = [
     component: ProponenteListComponent
   },
   {
-    path:"remove-proponente",
+    path:"remove-proponente/:id",
     component: RemoveProponenteComponent
   },
   {
@@ -119,7 +119,7 @@ const routes: Routes = [
     component: DepartamentoCreationComponent
   },
   {
-    path:"departamento-edition",
+    path:"departamento-edition/:id",
     component: DepartamentoEditionComponent
   },
   {
@@ -127,7 +127,7 @@ const routes: Routes = [
     component: DepartamentoListComponent
   },
   {
-    path:"remove-departamento",
+    path:"remove-departamento/:id",
     component: RemoveDepartamentoComponent
   },
   {
@@ -135,7 +135,7 @@ const routes: Routes = [
     component: FacultadCreationComponent
   },
   {
-    path:"facultad-edition",
+    path:"facultad-edition/:id",
     component: FacultadEditionComponent
   },
   {
@@ -143,7 +143,7 @@ const routes: Routes = [
     component: FacultadListComponent
   },
   {
-    path:"remove-facultad",
+    path:"remove-facultad/:id",
     component: RemoveFacultadComponent
   },
   {
