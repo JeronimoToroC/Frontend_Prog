@@ -16,11 +16,12 @@ export class SecurityService {
 
   constructor(private http: HttpClient,
     private localStorageService: LocalStorageService){
-
+      this.VerifyActiveSession();
   }
 
   VerifyActiveSession(): boolean{
     let info = this.localStorageService.GetSessionInfo();
+    
     if(info.tk) {
       info.isLoggedIn = true;
       this.RefreshSessionInfo(info);
@@ -30,6 +31,7 @@ export class SecurityService {
       return false;
     }
   }
+
 
   RefreshSessionInfo(data: SessionDataModel){
     this.sessionInfoSubject.next(data);

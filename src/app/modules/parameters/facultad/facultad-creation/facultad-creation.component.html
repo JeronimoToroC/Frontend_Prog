@@ -1,1 +1,21 @@
-<p>facultad-creation works!</p>
+<div class="row">
+    <form [formGroup]="dataForm" class="col s12">
+      <div class="row">
+        <div class="input-field col s12">
+          <input formControlName="name" id="txtName" type="text">
+          <label for="txtName">Nombre Completo</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input  id="txtCodigo" type="text">
+          <label formControlName="codigo" for="txtCodigo">Código</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <button class="btn btn-success" (click)="SaveRecord()"></button>
+          &nbsp;<a href="" class="btn btn-warning orange" type="button" routerLink="/parameters/facultad-list">Cancelar</a>
+        </div>
+    </form>
+  </div>

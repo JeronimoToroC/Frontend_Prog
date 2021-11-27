@@ -34,6 +34,7 @@ import { FacultadEditionComponent } from './facultad/facultad-edition/facultad-e
 import { FacultadListComponent } from './facultad/facultad-list/facultad-list.component';
 import { FacultadPhotosComponent } from './facultad/facultad-photos/facultad-photos.component';
 import { RemoveFacultadComponent } from './facultad/remove-facultad/remove-facultad.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -74,7 +75,9 @@ import { RemoveFacultadComponent } from './facultad/remove-facultad/remove-facul
   ],
   imports: [
     CommonModule,
-    ParametersRoutingModule
+    ParametersRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class ParametersModule { }

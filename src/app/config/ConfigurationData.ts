@@ -5,4 +5,9 @@ export namespace ConfigurationData{
     export const VALID_FORM_MESSAGE = "OK"
     export const SECURITY_MS_URL = "http://localhost:3001";
     export const PRINCIPAL_MS_URL = "http://localhost:3000";
+    export const SAVED_MESSAGE = "Registro guardado"
+    export const UPDATED_MESSAGE = "Registro actualizado."
+    export const REMOVED_MESSAGE = "Registro eliminado"
+    export const ERROR_MESSAGE = "Error en el backend."
+
 }
