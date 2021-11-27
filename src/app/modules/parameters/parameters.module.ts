@@ -35,6 +35,7 @@ import { FacultadListComponent } from './facultad/facultad-list/facultad-list.co
 import { FacultadPhotosComponent } from './facultad/facultad-photos/facultad-photos.component';
 import { RemoveFacultadComponent } from './facultad/remove-facultad/remove-facultad.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 
 
@@ -77,7 +78,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     CommonModule,
     ParametersRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgxPaginationModule
   ]
 })
 export class ParametersModule { }
