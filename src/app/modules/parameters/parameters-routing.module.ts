@@ -33,6 +33,10 @@ import { RemoveSolicitudComponent } from './solicitud/remove-solicitud/remove-so
 import { SolicitudCreationComponent } from './solicitud/solicitud-creation/solicitud-creation.component';
 import { SolicitudEditionComponent } from './solicitud/solicitud-edition/solicitud-edition.component';
 import { SolicitudListComponent } from './solicitud/solicitud-list/solicitud-list.component';
+import { LineasInvestigacionCreationComponent } from './lineas-investigacion/lineas-investigacion-creation/lineas-investigacion-creation.component';
+import { LineasInvestigacionEditionComponent } from './lineas-investigacion/lineas-investigacion-edition/lineas-investigacion-edition.component';
+import { LineasInvestigacionListComponent } from './lineas-investigacion/lineas-investigacion-list/lineas-investigacion-list.component';
+import { RemoveLineasInvestigacionComponent } from './lineas-investigacion/remove-lineas-investigacion/remove-lineas-investigacion.component';
 
 const routes: Routes = [
   {
@@ -173,6 +177,26 @@ const routes: Routes = [
   {
     path:"remove-facultad/:id",
     component: RemoveFacultadComponent,
+    canActivate: [AuthenticatedGuard]
+  },
+  {
+    path:"lineas-investigacion-creation",
+    component: LineasInvestigacionCreationComponent,
+    canActivate: [AuthenticatedGuard]
+  },
+  {
+    path:"lineas-investigacion-edition/:id",
+    component: LineasInvestigacionEditionComponent,
+    canActivate: [AuthenticatedGuard]
+  },
+  {
+    path:"lineas-investigacion-list",
+    component: LineasInvestigacionListComponent,
+    canActivate: [AuthenticatedGuard]
+  },
+  {
+    path:"remove-lineas-investigacion/:id",
+    component: RemoveLineasInvestigacionComponent,
     canActivate: [AuthenticatedGuard]
   },
   {

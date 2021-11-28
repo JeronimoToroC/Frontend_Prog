@@ -10,6 +10,7 @@
         <li *ngIf="activeSession"><a routerLink="parameters/modalidad-list">Modalidades</a></li>
         <li *ngIf="activeSession"><a routerLink="parameters/proponente-list">Poponente</a></li>
         <li *ngIf="activeSession"><a routerLink="parameters/solicitud-list">Solicitud</a></li>
+        <li *ngIf="activeSession"><a routerLink="parameters/lineas-investigacion-list">Lineas de Investigacion</a></li>
         <li *ngIf="!activeSession"><a routerLink="security/login">Iniciar Sesión</a></li>
         <li *ngIf="activeSession"><a routerLink="security/logout">Log out</a></li>
       </ul>
@@ -18,6 +19,13 @@
 
   <ul class="sidenav" id="mobile-demo">
     <li *ngIf="activeSession"><a routerLink="parameters/jurados-list">Jurados</a></li>
+    <li *ngIf="activeSession"><a routerLink="parameters/facultad-list">Facultad</a></li>
+    <li *ngIf="activeSession"><a routerLink="parameters/comite-list">Comite</a></li>
+    <li *ngIf="activeSession"><a routerLink="parameters/departamento-list">Departamento</a></li>
+    <li *ngIf="activeSession"><a routerLink="parameters/modalidad-list">Modalidades</a></li>
+    <li *ngIf="activeSession"><a routerLink="parameters/proponente-list">Poponente</a></li>
+    <li *ngIf="activeSession"><a routerLink="parameters/solicitud-list">Solicitud</a></li>
+    <li *ngIf="activeSession"><a routerLink="parameters/lineas-investigacion-list">Lineas de Investigacion</a></li>
     <li *ngIf="!activeSession"><a routerLink="security/login">Iniciar Sesión</a></li>
     <li *ngIf="activeSession"><a routerLink="security/logout">Log out</a></li>
   </ul>
