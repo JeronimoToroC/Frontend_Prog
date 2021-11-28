@@ -27,14 +27,14 @@ export class LineasInvestigacionService {
   SaveRecord(data: LineasInvestigacionModel): Observable<LineasInvestigacionModel> {
     return this.http.post<LineasInvestigacionModel>(`${this.url}/lineas-investigacions`,
       {
-        nombre: data.nombre
+        name: data.name
       });
   }
 
   EditRecord(data: LineasInvestigacionModel): Observable<LineasInvestigacionModel> {
     return this.http.put<LineasInvestigacionModel>(`${this.url}//lineas-investigacions/${data.id}`,
       {
-        nombre: data.nombre
+        name: data.name
       });
   }
   

@@ -38,7 +38,7 @@ export class LineasInvestigacionCreationComponent implements OnInit {
 
   SaveRecord(){
     let model = new LineasInvestigacionModel();
-    model.nombre = this.GetDF["name"].value;
+    model.name = this.GetDF["name"].value;
     this.service.SaveRecord(model).subscribe({
       next: (data: LineasInvestigacionModel) => {
         ShowGeneralMessage(ConfigurationData.SAVED_MESSAGE)
