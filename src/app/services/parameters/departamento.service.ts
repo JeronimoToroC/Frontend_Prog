@@ -27,14 +27,14 @@ export class DepartamentoService {
   SaveRecord(data: DepartamentoModel): Observable<DepartamentoModel> {
     return this.http.post<DepartamentoModel>(`${this.url}/departamento`,
       {
-        nombre: data.nombre
+        nombre: data.name
       });
   }
 
   EditRecord(data: DepartamentoModel): Observable<DepartamentoModel> {
     return this.http.put<DepartamentoModel>(`${this.url}/departamento/${data.id}`,
       {
-        nombre: data.nombre
+        nombre: data.name
       });
   }
   

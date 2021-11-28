@@ -18,7 +18,23 @@ export class JuradosService {
       this.tk = this.localStorageService.GetToken();
   }
   GetRecordList(): Observable<JuradosModel[]>{
-    return this.http.get<JuradosModel[]>(`${this.url}/jurados`);
+    return this.http.get<JuradosModel[]>(`${this.url}/jurados`,{
+      headers: new HttpHeaders({
+        "Authorization": `Bearer ${this.tk}`
+      })
+    });
+  }
+
+  SaveRecord(data: JuradosModel): Observable<JuradosModel>{
+    return this.http.post<JuradosModel>(`${this.url}/jurados`,
+    {
+      nombre: data.nombre
+    },
+    {
+      headers: new HttpHeaders({
+        Authorization: `Bearer ${this.tk}`
+      })
+    });
   }
 
   SaveRecord(data: JuradosModel): Observable<JuradosModel>{
