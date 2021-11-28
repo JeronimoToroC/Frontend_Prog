@@ -35,7 +35,7 @@ export class DepartamentoService {
   EditRecord(data: DepartamentoModel): Observable<DepartamentoModel> {
     return this.http.put<DepartamentoModel>(`${this.url}/departamentos/${data.id}`,
       {
-        nombre: data.name
+        name: data.name
       });
   }
   
