@@ -1,4 +1,4 @@
 export class ComiteModel {
     id?: number;
-    nombre?: string;
+    name?: string;
 }
