@@ -10,5 +10,6 @@ export namespace ConfigurationData{
     export const UPDATED_MESSAGE = "Registro actualizado."
     export const REMOVED_MESSAGE = "Registro eliminado"
     export const ERROR_MESSAGE = "Error en el backend."
+    export const RESET_PASSWORD_MESSAGE = "Email enviado para restaurar contraseña."
 
 }
