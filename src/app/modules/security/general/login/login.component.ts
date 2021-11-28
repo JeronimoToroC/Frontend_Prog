@@ -17,7 +17,10 @@ declare const ShowGeneralMessage: any;
 })
 export class LoginComponent implements OnInit {
 
+
   dataForm: FormGroup = new FormGroup({});
+
+  siteKey:string = "6LcTCGQdAAAAAMLJm4dZXbJThPSyD-Z6oRE0TG2_";
 
   constructor(
     private fb:FormBuilder,
@@ -33,7 +36,8 @@ export class LoginComponent implements OnInit {
   FormBuilding(){
     this.dataForm = this.fb.group({
       username: ["", [Validators.required, Validators.email, Validators.minLength(ConfigurationData.EMAIL_MIN_LENGHT)]],
-      password: ["",[Validators.required, Validators.minLength(ConfigurationData.PASSWORD_MIN_LENGHT)]]
+      password: ["",[Validators.required, Validators.minLength(ConfigurationData.PASSWORD_MIN_LENGHT)]],
+      recaptcha: ['', Validators.required]
     });
   }
 
