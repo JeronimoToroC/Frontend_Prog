@@ -36,6 +36,10 @@ import { FacultadPhotosComponent } from './facultad/facultad-photos/facultad-pho
 import { RemoveFacultadComponent } from './facultad/remove-facultad/remove-facultad.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { LineasInvestigacionCreationComponent } from './lineas-investigacion/lineas-investigacion-creation/lineas-investigacion-creation.component';
+import { LineasInvestigacionEditionComponent } from './lineas-investigacion/lineas-investigacion-edition/lineas-investigacion-edition.component';
+import { LineasInvestigacionListComponent } from './lineas-investigacion/lineas-investigacion-list/lineas-investigacion-list.component';
+import { RemoveLineasInvestigacionComponent } from './lineas-investigacion/remove-lineas-investigacion/remove-lineas-investigacion.component';
 
 
 
@@ -73,6 +77,12 @@ import { NgxPaginationModule } from 'ngx-pagination';
     FacultadListComponent,    
     FacultadPhotosComponent, 
     RemoveFacultadComponent,
+    LineasInvestigacionCreationComponent,
+    LineasInvestigacionEditionComponent,
+    LineasInvestigacionListComponent,
+    RemoveLineasInvestigacionComponent
+
+
   ],
   imports: [
     CommonModule,
