@@ -15,7 +15,7 @@ export class ResetPasswordService {
   }
 
   ResetPassword(data: ResetPasswordModel): Observable<ResetPasswordModel> {
-    return this.http.post<ResetPasswordModel>(`${this.url}/recuperar-contraseña`,
+    return this.http.post<ResetPasswordModel>(`${this.url}/recuperar-contrasenia`,
       {
         email: data.email
       });

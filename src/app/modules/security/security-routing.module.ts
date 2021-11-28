@@ -29,8 +29,7 @@ const routes: Routes = [
   },
   {
     path:"reset-password",
-    component: ResetPasswordComponent,
-    canActivate: [AuthenticatedGuard]
+    component: ResetPasswordComponent
   },
   {
     path:"user-creation",
