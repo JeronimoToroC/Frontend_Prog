@@ -27,7 +27,8 @@ export class DepartamentoService {
   SaveRecord(data: DepartamentoModel): Observable<DepartamentoModel> {
     return this.http.post<DepartamentoModel>(`${this.url}/departamentos`,
       {
-        nombre: data.name
+        name: data.name,
+        facultadId: data.facultadId
       });
   }
 
