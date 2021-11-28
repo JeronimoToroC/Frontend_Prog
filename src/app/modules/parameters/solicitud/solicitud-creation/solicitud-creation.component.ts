@@ -28,9 +28,11 @@ export class SolicitudCreationComponent implements OnInit {
 
   FormBuilding(){
     this.dataForm = this.fb.group({
-      name: ["", [Validators.required]],
-      descripcion: ["", [Validators.required]],
-      tipo_comite: ["", [Validators.required]],
+      workName: ["", [Validators.required]],
+      description: ["", [Validators.required]],
+      comiteType: ["", [Validators.required]],
+      file: ["", [Validators.required]],
+      date_rad: ["", [Validators.required]],
     });
   }
 
@@ -40,9 +42,11 @@ export class SolicitudCreationComponent implements OnInit {
 
   SaveRecord(){
     let model = new SolicitudModel();
-    model.nombre = this.GetDF["name"].value;
-    model.descripcion = this.GetDF["descripcion"].value;
-    model.tipo_comite = this.GetDF["tipoComite"].value;
+    model.workName = this.GetDF["workName"].value;
+    model.description = this.GetDF["description"].value;
+    model.comiteType = this.GetDF["comiteType"].value;
+    model.date_rad = this.GetDF["date_rad"].value;
+    model.file = this.GetDF["file"].value;
     this.service.SaveRecord(model).subscribe({
       next: (data: SolicitudModel) => {
         ShowGeneralMessage(ConfigurationData.SAVED_MESSAGE)

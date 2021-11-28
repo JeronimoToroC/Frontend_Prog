@@ -13,9 +13,11 @@ declare const ShowGeneralMessage: any;
 })
 export class RemoveSolicitudComponent implements OnInit {
   id: number = 0;
-  name: string = "";
-  descripcion: string = "";
-  tipo_comite: string = "";
+  workName: string = "";
+  date_rad: string = "";
+  description: string = "";
+  file: any = "";
+  comiteType: any = "";
 
   constructor(
     private router: Router,
@@ -31,11 +33,13 @@ export class RemoveSolicitudComponent implements OnInit {
     let id = this.route.snapshot.params["id"];
     this.service.SearchRecord(id).subscribe({
       next: (data: SolicitudModel) => {
-        if (data.id && data.nombre && data.descripcion && data.tipo_comite) {
+        if (data.id && data.date_rad && data.workName && data.description && data.comiteType && data.file ) {
           this.id = data.id;
-          this.name = data.nombre;
-          this.descripcion = data.descripcion;
-          this.tipo_comite = data.tipo_comite;
+          this.workName = data.workName;
+          this.date_rad = data.date_rad;
+          this.description = data.description;
+          this.comiteType = data.comiteType;
+          this.file = data.file
         }
       }
     });

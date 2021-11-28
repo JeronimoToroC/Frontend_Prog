@@ -9,11 +9,14 @@ import { FacultadService } from 'src/app/services/parameters/facultad.service';
 })
 export class FacultadListComponent implements OnInit {
 
-    recordList:FacultadModel[] = [];
+  recordList: FacultadModel[] = [];
+
+  p: number = 1;
+  pageSize: number = 3;
+  totalAmount: number = 0;
 
   constructor(
-    private service:FacultadService
-
+    private service: FacultadService
   ) { }
 
   ngOnInit(): void {
@@ -22,8 +25,9 @@ export class FacultadListComponent implements OnInit {
 
   ShowRecordList(){
     this.service.GetRecordList().subscribe({
-      next: (data:FacultadModel[]) => {
+      next: (data: FacultadModel[]) => {
         this.recordList = data;
+        this.totalAmount = this.recordList.length;
       } 
     });
   }

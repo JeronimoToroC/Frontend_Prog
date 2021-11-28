@@ -27,18 +27,22 @@ export class SolicitudService {
   SaveRecord(data: SolicitudModel): Observable<SolicitudModel> {
     return this.http.post<SolicitudModel>(`${this.url}/solicitud`,
       {
-        nombre: data.nombre,
-        tipo_comite: data.tipo_comite,
-        descripcion: data.descripcion
+        workName: data.workName,
+        comiteType: data.comiteType,
+        description: data.description,
+        file: data.file,
+        date_rad: data.date_rad,
       });
   }
 
   EditRecord(data: SolicitudModel): Observable<SolicitudModel> {
     return this.http.put<SolicitudModel>(`${this.url}/solicitud/${data.id}`,
       {
-        nombre: data.nombre,
-        tipo_comite: data.tipo_comite,
-        descripcion: data.descripcion
+        workName: data.workName,
+        comiteType: data.comiteType,
+        description: data.description,
+        file: data.file,
+        date_rad: data.date_rad,
       });
   }
   

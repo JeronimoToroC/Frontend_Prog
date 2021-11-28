@@ -1,6 +1,9 @@
 export class SolicitudModel {
     id?: number;
-    nombre?:string;
-    tipo_comite?:string;
-    descripcion?:string;
+    workName?:string;
+    comiteType?:any;
+    description?:string;
+    date_rad?:string;
+    file?:any;
+
 }

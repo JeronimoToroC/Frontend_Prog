@@ -11,7 +11,19 @@
                     id
                 </th>
                 <th>
-                    Nombre
+                    Nombre del Trabajo
+                </th>
+                <th>
+                    Tipo de Comite
+                </th>
+                <th>
+                    Descripción
+                </th>
+                <th>
+                    Archivo
+                </th>
+                <th>
+                    Fecha
                 </th>
                 <th>
                     Acciones
@@ -24,10 +36,28 @@
                     {{r.id}}
                 </td>
                 <td>
-                    {{r.nombre}}
+                    {{r.workName}}
                 </td>
                 <td>
-                    
+                    {{r.comiteType}}
+                </td>
+                <td>
+                    {{r.description}}
+                </td>
+                <td>
+                    {{r.file}}
+                </td>
+                <td>
+                    {{r.date_rad}}
+                </td>
+                <td>
+                    <a class="btn btn-warning orange" routerLink="/parameters/solicitud-edition/{{r.id}}">Editar</a>
+                    <a class="btn btn-warning orange" routerLink="/parameters/remove-solicitud/{{r.id}}">Eliminar</a>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    <pagination-controls (pageChange)="p = $event" previousLabel="Anterior" nextLabel="Siguiente"></pagination-controls>
                 </td>
             </tr>
         </tbody>
