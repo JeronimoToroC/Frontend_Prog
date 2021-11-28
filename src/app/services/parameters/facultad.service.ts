@@ -33,7 +33,7 @@ export class FacultadService {
   }
 
   EditRecord(data: FacultadModel): Observable<FacultadModel> {
-    return this.http.put<FacultadModel>(`${this.url}/facultad/${data.id}`,
+    return this.http.put<FacultadModel>(`${this.url}/facultads/${data.id}`,
       {
         nombre: data.name,
         codigo: data.codigo
@@ -42,7 +42,7 @@ export class FacultadService {
   
 
   RemoveRecord(id: number): Observable<any> {
-    return this.http.delete<any>(`${this.url}/facultad/${id}`);
+    return this.http.delete<any>(`${this.url}/facultads/${id}`);
   }
 
 }

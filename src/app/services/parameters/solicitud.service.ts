@@ -17,15 +17,15 @@ export class SolicitudService {
   }
 
   GetRecordList(): Observable<SolicitudModel[]> {
-    return this.http.get<SolicitudModel[]>(`${this.url}/solicitud`);
+    return this.http.get<SolicitudModel[]>(`${this.url}/solicituds`);
   }
 
   SearchRecord(id: number): Observable<SolicitudModel> {
-    return this.http.get<SolicitudModel>(`${this.url}/solicitud/${id}`);
+    return this.http.get<SolicitudModel>(`${this.url}/solicituds/${id}`);
   }
 
   SaveRecord(data: SolicitudModel): Observable<SolicitudModel> {
-    return this.http.post<SolicitudModel>(`${this.url}/solicitud`,
+    return this.http.post<SolicitudModel>(`${this.url}/solicituds`,
       {
         workName: data.workName,
         comiteType: data.comiteType,
@@ -36,7 +36,7 @@ export class SolicitudService {
   }
 
   EditRecord(data: SolicitudModel): Observable<SolicitudModel> {
-    return this.http.put<SolicitudModel>(`${this.url}/solicitud/${data.id}`,
+    return this.http.put<SolicitudModel>(`${this.url}/solicituds/${data.id}`,
       {
         workName: data.workName,
         comiteType: data.comiteType,
@@ -48,7 +48,7 @@ export class SolicitudService {
   
 
   RemoveRecord(id: number): Observable<any> {
-    return this.http.delete<any>(`${this.url}/solicitud/${id}`);
+    return this.http.delete<any>(`${this.url}/solicituds/${id}`);
   }
 
 }

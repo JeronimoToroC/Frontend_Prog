@@ -17,22 +17,22 @@ export class DepartamentoService {
   }
 
   GetRecordList(): Observable<DepartamentoModel[]> {
-    return this.http.get<DepartamentoModel[]>(`${this.url}/departamento`);
+    return this.http.get<DepartamentoModel[]>(`${this.url}/departamentos`);
   }
 
   SearchRecord(id: number): Observable<DepartamentoModel> {
-    return this.http.get<DepartamentoModel>(`${this.url}/departamento/${id}`);
+    return this.http.get<DepartamentoModel>(`${this.url}/departamentos/${id}`);
   }
 
   SaveRecord(data: DepartamentoModel): Observable<DepartamentoModel> {
-    return this.http.post<DepartamentoModel>(`${this.url}/departamento`,
+    return this.http.post<DepartamentoModel>(`${this.url}/departamentos`,
       {
         nombre: data.name
       });
   }
 
   EditRecord(data: DepartamentoModel): Observable<DepartamentoModel> {
-    return this.http.put<DepartamentoModel>(`${this.url}/departamento/${data.id}`,
+    return this.http.put<DepartamentoModel>(`${this.url}/departamentos/${data.id}`,
       {
         nombre: data.name
       });
@@ -40,7 +40,7 @@ export class DepartamentoService {
   
 
   RemoveRecord(id: number): Observable<any> {
-    return this.http.delete<any>(`${this.url}/departamento/${id}`);
+    return this.http.delete<any>(`${this.url}/departamentos/${id}`);
   }
 
 }
