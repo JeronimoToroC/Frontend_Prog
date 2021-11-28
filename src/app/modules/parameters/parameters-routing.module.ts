@@ -37,6 +37,10 @@ import { LineasInvestigacionCreationComponent } from './lineas-investigacion/lin
 import { LineasInvestigacionEditionComponent } from './lineas-investigacion/lineas-investigacion-edition/lineas-investigacion-edition.component';
 import { LineasInvestigacionListComponent } from './lineas-investigacion/lineas-investigacion-list/lineas-investigacion-list.component';
 import { RemoveLineasInvestigacionComponent } from './lineas-investigacion/remove-lineas-investigacion/remove-lineas-investigacion.component';
+import { TipoVinculacionCreationComponent } from './tipo-vinculacion/tipo-vinculacion-creation/tipo-vinculacion-creation.component';
+import { TipoVinculacionEditionComponent } from './tipo-vinculacion/tipo-vinculacion-edition/tipo-vinculacion-edition.component';
+import { TipoVinculacionListComponent } from './tipo-vinculacion/tipo-vinculacion-list/tipo-vinculacion-list.component';
+import { RemoveTipoVinculacionComponent } from './tipo-vinculacion/remove-tipo-vinculacion/remove-tipo-vinculacion.component';
 
 const routes: Routes = [
   {
@@ -197,6 +201,26 @@ const routes: Routes = [
   {
     path:"remove-lineas-investigacion/:id",
     component: RemoveLineasInvestigacionComponent,
+    canActivate: [AuthenticatedGuard]
+  },
+  {
+    path:"tipo-vinculacion-creation",
+    component: TipoVinculacionCreationComponent,
+    canActivate: [AuthenticatedGuard]
+  },
+  {
+    path:"tipo-vinculacion-edition/:id",
+    component: TipoVinculacionEditionComponent,
+    canActivate: [AuthenticatedGuard]
+  },
+  {
+    path:"tipo-vinculacion-list",
+    component: TipoVinculacionListComponent,
+    canActivate: [AuthenticatedGuard]
+  },
+  {
+    path:"remove-tipo-vinculacion/:id",
+    component: RemoveTipoVinculacionComponent,
     canActivate: [AuthenticatedGuard]
   },
   {
