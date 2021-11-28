@@ -38,7 +38,7 @@ export class DepartamentoCreationComponent implements OnInit {
 
   SaveRecord(){
     let model = new DepartamentoModel();
-    model.nombre = this.GetDF["name"].value;
+    model.name = this.GetDF["name"].value;
     this.service.SaveRecord(model).subscribe({
       next: (data: DepartamentoModel) => {
         ShowGeneralMessage(ConfigurationData.SAVED_MESSAGE)
