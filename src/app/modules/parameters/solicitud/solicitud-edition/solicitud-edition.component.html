@@ -2,21 +2,25 @@
     <form [formGroup]="dataForm" class="col s12">
         <input type="hidden" formControlName="id" />
         <div class="row">
-            <div class="input-field col s12">
-                <input formControlName="name" id="txtName" type="text">
-                <label class="active" for="txtName">Nombre</label>
+            <div class="input-field col s3">
+                <input formControlName="workName" id="txtNombre" type="text">
+                <label for="txtNombre">Nombre del Trabajo</label>
             </div>
-        </div>
-        <div class="row">
-            <div class="input-field col s12">
-                <input formControlName="descripcion" id="txtDescripcion" type="text">
-                <label class="active" for="txtDescripcion">Descripción</label>
+            <div class="input-field col s3">
+                <input formControlName="description" id="txtDescripcion" type="text">
+                <label for="txtDescripcion">Descripcion</label>
             </div>
-        </div>
-        <div class="row">
-            <div class="input-field col s12">
-                <input formControlName="tipoComite" id="txttipoComite" type="text">
-                <label class="active" for="txttipoComite">TipoComite</label>
+            <div class="input-field col s3">
+                <input formControlName="comiteType" id="tipoComite" type="text">
+                <label for="comiteType">Tipo de Cómite</label>
+            </div>
+            <div class="input-field col s3">
+                <input formControlName="file" id="archivo" type="file">
+                <label for="archivo">Archivo</label>
+            </div>
+            <div class="input-field col s3">
+                <input formControlName="date_rad" id="dateRad" type="date">
+                <label for="dateRad">Fecha</label>
             </div>
         </div>
         <div class="row">

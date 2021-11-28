@@ -11,6 +11,10 @@ export class SolicitudListComponent implements OnInit {
 
   recordList: SolicitudModel[] = [];
 
+  p: number = 1;
+  pageSize: number = 3;
+  totalAmount: number = 0;
+
   constructor(
     private service: SolicitudService
   ) { }
@@ -23,6 +27,7 @@ export class SolicitudListComponent implements OnInit {
     this.service.GetRecordList().subscribe({
       next: (data: SolicitudModel[]) => {
         this.recordList = data;
+        this.totalAmount = this.recordList.length;
       } 
     });
   }

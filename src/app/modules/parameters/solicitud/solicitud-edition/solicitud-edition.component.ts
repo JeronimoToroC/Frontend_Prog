@@ -32,9 +32,11 @@ export class SolicitudEditionComponent implements OnInit {
   FormBuilding() {
     this.dataForm = this.fb.group({
       id: ["", [Validators.required]],
-      name: ["", [Validators.required]],
-      descripcion: ["", [Validators.required]],
-      tipo_comite: ["", [Validators.required]],
+      workName: ["", [Validators.required]],
+      description: ["", [Validators.required]],
+      comiteType: ["", [Validators.required]],
+      file: ["", [Validators.required]],
+      date_rad: ["", [Validators.required]],
     });
   }
 
@@ -48,18 +50,23 @@ export class SolicitudEditionComponent implements OnInit {
     this.service.SearchRecord(id).subscribe({
       next: (data: SolicitudModel) => {
         this.GetDF["id"].setValue(data.id);
-        this.GetDF["name"].setValue(data.nombre);
-        this.GetDF["descripcion"].setValue(data.descripcion);
-        this.GetDF["tipoComite"].setValue(data.tipo_comite);
+        this.GetDF["workName"].setValue(data.workName);
+        this.GetDF["description"].setValue(data.description);
+        this.GetDF["comiteType"].setValue(data.comiteType);
+        this.GetDF["file"].setValue(data.file);
+        this.GetDF["date_rad"].setValue(data.date_rad);
+      
       }
     });
   }
 
   SaveRecord(){
     let model = new SolicitudModel();
-    model.nombre = this.GetDF["name"].value;
-    model.descripcion = this.GetDF["descripcion"].value;
-    model.tipo_comite = this.GetDF["tipoComite"].value;
+    model.workName = this.GetDF["workName"].value;
+    model.description = this.GetDF["description"].value;
+    model.comiteType = this.GetDF["comiteType"].value;
+    model.file = this.GetDF["file"].value;
+    model.date_rad = this.GetDF["date_rad"].value;
     model.id = this.GetDF["id"].value;
     this.service.EditRecord(model).subscribe({
       next: (data: SolicitudModel) => {

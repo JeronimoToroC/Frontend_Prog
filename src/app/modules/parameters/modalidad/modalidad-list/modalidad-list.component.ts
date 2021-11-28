@@ -11,6 +11,10 @@ export class ModalidadListComponent implements OnInit {
 
   recordList: ModalidadModel[] = [];
 
+  p: number = 1;
+  pageSize: number = 3;
+  totalAmount: number = 0;
+
   constructor(
     private service: ModalidadService
   ) { }
@@ -23,6 +27,7 @@ export class ModalidadListComponent implements OnInit {
     this.service.GetRecordList().subscribe({
       next: (data: ModalidadModel[]) => {
         this.recordList = data;
+        this.totalAmount = this.recordList.length;
       } 
     });
   }
