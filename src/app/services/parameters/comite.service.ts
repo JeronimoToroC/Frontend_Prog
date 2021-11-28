@@ -27,14 +27,14 @@ export class ComiteService {
   SaveRecord(data: ComiteModel): Observable<ComiteModel> {
     return this.http.post<ComiteModel>(`${this.url}/tipo-comites`,
       {
-        nombre: data.nombre
+        name: data.name
       });
   }
 
   EditRecord(data: ComiteModel): Observable<ComiteModel> {
     return this.http.put<ComiteModel>(`${this.url}//tipo-comites/${data.id}`,
       {
-        nombre: data.nombre
+        name: data.name
       });
   }
   

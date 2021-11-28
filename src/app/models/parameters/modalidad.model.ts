@@ -1,4 +1,4 @@
 export class ModalidadModel {
     id?: number;
-    nombre?: string;
+    name?: string;
 }

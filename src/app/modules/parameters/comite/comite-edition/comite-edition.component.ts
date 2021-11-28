@@ -46,14 +46,14 @@ export class ComiteEditionComponent implements OnInit {
     this.service.SearchRecord(id).subscribe({
       next: (data: ComiteModel) => {
         this.GetDF["id"].setValue(data.id);
-        this.GetDF["name"].setValue(data.nombre);
+        this.GetDF["name"].setValue(data.name);
       }
     });
   }
 
   SaveRecord(){
     let model = new ComiteModel();
-    model.nombre = this.GetDF["name"].value;
+    model.name = this.GetDF["name"].value;
     model.id = this.GetDF["id"].value;
     this.service.EditRecord(model).subscribe({
       next: (data: ComiteModel) => {
