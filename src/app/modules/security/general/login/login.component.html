@@ -13,7 +13,12 @@
 
             <div class='row'>
               <div class='input-field col s12'>
-                <input formControlName="username" class='validate' type='username' name='usernmae' id='username' />
+                <input
+                formControlName="username"
+                class='validate'
+                type='email'
+                name='username'
+                id='username' />
                 <label for='usuario'>Ingrese su Usuario</label>
               </div>
               <div class="errorValidation">
@@ -26,7 +31,7 @@
             <div class='row'>
               <div class='input-field col s12'>
                 <input formControlName="password" class='validate' type='password' name='password' id='password' />
-                <label for='password'>Enter your password</label>
+                <label for='password'>Ingrese su contraseña</label>
                 <div class="errorValidation">
                   <div class="errorValidation">
                     <label *ngIf="GetDF['password'].errors && (dataForm.controls['password'].dirty || dataForm.controls['password'].touched)">
@@ -36,17 +41,24 @@
                 </div>
               </div>
               <label style='float: right;'>
-								<a class='pink-text' routerLink="../reset-password"><b>Forgot Password?</b></a>
+								<a class='pink-text' routerLink="../reset-password"><b>Recuperar contraseña</b></a>
 							</label>
             </div>
 
             <br />
-            
+
             <div class='row center'>
-              <button [disabled]="dataForm.controls['username'].errors || dataForm.controls['password'].errors" type='button' (click)="Login()" name='btn_login'
-                  class='col s12 btn btn-large waves-effect'>Identificar</button>
+              <button
+                [disabled]="dataForm.controls['username'].errors || dataForm.controls['password'].errors" type='button'
+                (click)="Login()"
+                name='btn_login'
+                class='col s12 btn btn-large waves-effect'
+                style="background-color: #063B70"
+              >
+                Identificar
+              </button>
             </div>
-            
+
           </form>
         </div>
       </div>

@@ -16,7 +16,7 @@ main {
 }
 
 .input-field input[type="date"]:focus,
-.input-field input[type="text"]:focus,
+.input-field input[type="text"]:focus
 .input-field input[type="email"]:focus,
 .input-field input[type="password"]:focus {
   border-bottom: 2px solid #e91e63;
