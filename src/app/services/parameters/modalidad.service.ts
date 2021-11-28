@@ -17,22 +17,22 @@ export class ModalidadService {
   }
 
   GetRecordList(): Observable<ModalidadModel[]> {
-    return this.http.get<ModalidadModel[]>(`${this.url}/marcas`);
+    return this.http.get<ModalidadModel[]>(`${this.url}/modalidads`);
   }
 
   SearchRecord(id: number): Observable<ModalidadModel> {
-    return this.http.get<ModalidadModel>(`${this.url}/marcas/${id}`);
+    return this.http.get<ModalidadModel>(`${this.url}/modalidads/${id}`);
   }
 
   SaveRecord(data: ModalidadModel): Observable<ModalidadModel> {
-    return this.http.post<ModalidadModel>(`${this.url}/marcas`,
+    return this.http.post<ModalidadModel>(`${this.url}/modalidads`,
       {
         nombre: data.nombre
       });
   }
 
   EditRecord(data: ModalidadModel): Observable<ModalidadModel> {
-    return this.http.put<ModalidadModel>(`${this.url}/marcas/${data.id}`,
+    return this.http.put<ModalidadModel>(`${this.url}/modalidads/${data.id}`,
       {
         nombre: data.nombre
       });
@@ -40,7 +40,7 @@ export class ModalidadService {
   
 
   RemoveRecord(id: number): Observable<any> {
-    return this.http.delete<any>(`${this.url}/marcas/${id}`);
+    return this.http.delete<any>(`${this.url}/modalidads/${id}`);
   }
 
 }
