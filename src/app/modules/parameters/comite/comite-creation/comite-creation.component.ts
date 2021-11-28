@@ -38,7 +38,7 @@ export class ComiteCreationComponent implements OnInit {
 
   SaveRecord(){
     let model = new ComiteModel();
-    model.nombre = this.GetDF["name"].value;
+    model.name = this.GetDF["name"].value;
     this.service.SaveRecord(model).subscribe({
       next: (data: ComiteModel) => {
         ShowGeneralMessage(ConfigurationData.SAVED_MESSAGE)

@@ -27,14 +27,14 @@ export class ModalidadService {
   SaveRecord(data: ModalidadModel): Observable<ModalidadModel> {
     return this.http.post<ModalidadModel>(`${this.url}/modalidads`,
       {
-        nombre: data.nombre
+        name: data.name
       });
   }
 
   EditRecord(data: ModalidadModel): Observable<ModalidadModel> {
     return this.http.put<ModalidadModel>(`${this.url}/modalidads/${data.id}`,
       {
-        nombre: data.nombre
+        name: data.name
       });
   }
   

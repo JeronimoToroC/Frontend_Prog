@@ -29,9 +29,9 @@ export class RemoveModalidadComponent implements OnInit {
     let id = this.route.snapshot.params["id"];
     this.service.SearchRecord(id).subscribe({
       next: (data: ModalidadModel) => {
-        if (data.id && data.nombre) {
+        if (data.id && data.name) {
           this.id = data.id;
-          this.name = data.nombre;
+          this.name = data.name;
         }
       }
     });
