@@ -46,7 +46,8 @@ export class TipoSolicitudEditionComponent implements OnInit {
     this.service.SearchRecord(id).subscribe({
       next: (data: TipoSolicitudModel) => {
         this.GetDF["id"].setValue(data.id);
-        this.GetDF["name"].setValue(data.name);
+        this.GetDF["name"].setValue(data.name);        
+        this.GetDF["format"].setValue(data.format);
       }
     });
   }
@@ -54,7 +55,8 @@ export class TipoSolicitudEditionComponent implements OnInit {
   SaveRecord(){
     let model = new TipoSolicitudModel();
     model.name = this.GetDF["name"].value;
-    model.id = this.GetDF["id"].value;
+    model.id = this.GetDF["id"].value;    
+    model.format = this.GetDF["format"].value;
     this.service.EditRecord(model).subscribe({
       next: (data: TipoSolicitudModel) => {
         ShowGeneralMessage(ConfigurationData.UPDATED_MESSAGE)
