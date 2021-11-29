@@ -63,10 +63,10 @@ export class UserCreationComponent implements OnInit {
         ShowGeneralMessage(ConfigurationData.PASSWORD_MESSAGE)
       }
     })
-    this.service.SendPassword(model).subscribe({
+    /* this.service.SendPassword(model).subscribe({
       next: (data: UserDataModel) => {
       }
-    })
+    }) */
   }
 }
 
