@@ -59,8 +59,8 @@ export class UserCreationComponent implements OnInit {
     }
     this.service.SaveRecord(model).subscribe({
       next: (data: UserDataModel) => {
-        ShowGeneralMessage(ConfigurationData.SAVED_MESSAGE)
-        this.router.navigate(["/parameters/solicitud-list"]);
+        this.router.navigate(["/security/login"])
+        ShowGeneralMessage(ConfigurationData.PASSWORD_MESSAGE)
       }
     })
   }

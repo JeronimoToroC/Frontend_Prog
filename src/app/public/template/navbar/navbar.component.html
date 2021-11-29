@@ -6,13 +6,13 @@
         <li *ngIf="activeSession"><a routerLink="parameters/jurados-list">Jurados</a></li>
         <li *ngIf="activeSession"><a routerLink="parameters/facultad-list">Facultad</a></li>
         <li *ngIf="activeSession"><a routerLink="parameters/comite-list">Comite</a></li>
-        <li *ngIf="activeSession"><a routerLink="parameters/departamento-list">Departamento</a></li>
+        <!--<li *ngIf="activeSession"><a routerLink="parameters/departamento-list">Departamento</a></li>-->
         <li *ngIf="activeSession"><a routerLink="parameters/modalidad-list">Modalidades</a></li>
         <li *ngIf="activeSession"><a routerLink="parameters/proponente-list">Poponente</a></li>
         <li *ngIf="activeSession"><a routerLink="parameters/solicitud-list">Solicitud</a></li>
-        <li *ngIf="activeSession"><a routerLink="parameters/lineas-investigacion-list">Lineas de Investigacion</a></li>
+        <!--<li *ngIf="activeSession"><a routerLink="parameters/lineas-investigacion-list">Lineas de Investigacion</a></li>
         <li *ngIf="activeSession"><a routerLink="parameters/tipo-vinculacion-list">Tipo de Vinculación</a></li>
-        <li *ngIf="activeSession"><a routerLink="parameters/tipo-solicitud-list">Tipo de Solicitud</a></li>
+        <li *ngIf="activeSession"><a routerLink="parameters/tipo-solicitud-list">Tipo de Solicitud</a></li>-->
         <li *ngIf="!activeSession"><a routerLink="security/user-creation">Registrar</a></li>
         <li *ngIf="!activeSession"><a routerLink="security/login">Iniciar Sesión</a></li>
         <li *ngIf="activeSession"><a routerLink="security/logout">Cerrar sesión</a></li>
@@ -31,7 +31,7 @@
     <li *ngIf="activeSession"><a routerLink="parameters/lineas-investigacion-list">Lineas de Investigacion</a></li>
     <li *ngIf="activeSession"><a routerLink="parameters/tipo-vinculacion-list">Tipo de Vinculación</a></li>
     <li *ngIf="activeSession"><a routerLink="parameters/tipo-solicitud-list">Tipo de Solicitud</a></li>
-            <li *ngIf="!activeSession"><a routerLink="security/user-creation">Registrar</a></li>
-        <li *ngIf="!activeSession"><a routerLink="security/login">Iniciar Sesión</a></li>
-        <li *ngIf="activeSession"><a routerLink="security/logout">Cerrar sesión</a></li>
+    <li *ngIf="!activeSession"><a routerLink="security/user-creation">Registrar</a></li>
+    <li *ngIf="!activeSession"><a routerLink="security/login">Iniciar Sesión</a></li>
+    <li *ngIf="activeSession"><a routerLink="security/logout">Cerrar sesión</a></li>
   </ul>
