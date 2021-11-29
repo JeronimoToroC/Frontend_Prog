@@ -6,10 +6,6 @@
     <table>
         <thead>
             <tr>
-
-                <th>
-                    id
-                </th>
                 <th>
                     Nombre
                 </th>
@@ -24,17 +20,15 @@
         <tbody>
             <tr *ngFor="let r of recordList">
                 <td>
-                    {{r._id}}
-                </td>
-                <td>
                     {{r.name}}
                 </td>
+
                 <td>
                     {{r.rolesId}}
                 </td>
-                <td>
-                    <a class="btn btn-warning orange" routerLink="/parameters/user-edition/{{r._id}}">Editar</a>
-                    <a class="btn btn-warning orange" routerLink="/parameters/remove-user/{{r._id}}">Eliminar</a>
+
+                <td *ngIf="isShow(r)">
+                    <a class="btn btn-warning orange" routerLink="/parameters/user-edition/{{r._id}}">Notificar a Jurado</a>
                 </td>
             </tr>
         </tbody>
