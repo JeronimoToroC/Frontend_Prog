@@ -11,6 +11,7 @@
         <li *ngIf="activeSession"><a routerLink="parameters/proponente-list">Poponente</a></li>
         <li *ngIf="activeSession"><a routerLink="parameters/solicitud-list">Solicitud</a></li>
         <li *ngIf="!activeSession"><a routerLink="security/user-creation">Registrar</a></li>
+        <li *ngIf="activeSession"><a routerLink="parameters/lineas-investigacion-list">Lineas de Investigacion</a></li>
         <li *ngIf="!activeSession"><a routerLink="security/login">Iniciar Sesión</a></li>
         <li *ngIf="activeSession"><a routerLink="security/logout">Cerrar sesión</a></li>
       </ul>
