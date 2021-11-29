@@ -35,7 +35,7 @@ export class DepartamentoCreationComponent implements OnInit {
   FormBuilding(){
     this.dataForm = this.fb.group({
       name: ["", [Validators.required]],
-      facultadId: [0, [Validators.required]],
+      facultadId: [[Validators.required]],
     });
   }
 
@@ -46,7 +46,7 @@ export class DepartamentoCreationComponent implements OnInit {
   SaveRecord(){
     let model = new DepartamentoModel();
     model.name = this.GetDF["name"].value;
-    model.facultadId=this.GetDF["facultadId"].value;
+    model.facultadId=parseInt(this.GetDF["facultadId"].value)
     this.service.SaveRecord(model).subscribe({
       next: (data: DepartamentoModel) => {
         ShowGeneralMessage(ConfigurationData.SAVED_MESSAGE)
