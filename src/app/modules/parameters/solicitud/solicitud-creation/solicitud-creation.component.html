@@ -22,7 +22,29 @@
           <label for="dateRad">Fecha</label>
       </div>
       
-  </div>
+    </div>
+
+    <div class="row">
+      <div class="input-field col s12">
+        <select id="selLineas">
+          <option *ngFor="let a of lineasInvestlist" value="{{a.id}}">{{a.name}}</option>
+        </select>
+      <label>Seleccion Lineas de Investigacion</label>
+      </div>
+      <div class="input-field col s12">
+        <select id="selModalidad">
+          <option *ngFor="let a of modalidadList" value="{{a.id}}">{{a.name}}</option>
+        </select>
+      <label>Seleccion Modalidad</label>
+      </div>
+      <div class="input-field col s12">
+        <select id="selTipoSol">
+          <option *ngFor="let a of tipoSolList" value="{{a.id}}">{{a.name}}</option>
+        </select>
+      <label>Seleccion Tipo de Solicitud</label>
+      </div>      
+    </div>
+
     <div class="row">
       <div class="input-field col s12">
         <button type="button" class="btn btn-success" (click)="SaveRecord()">Guardar</button>
