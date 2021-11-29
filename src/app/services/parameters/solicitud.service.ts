@@ -32,6 +32,9 @@ export class SolicitudService {
         description: data.description,
         file: data.file,
         date_rad: data.date_rad,
+        lineasInvestigacionId: data.lineasInvestigacionId,
+        modalidadId: data.modalidadId,
+        tipoSolicitudId: data.tipoSolicitudId
       });
   }
 
@@ -43,6 +46,9 @@ export class SolicitudService {
         description: data.description,
         file: data.file,
         date_rad: data.date_rad,
+        lineasInvestigacionId: data.lineasInvestigacionId,
+        modalidadId: data.modalidadId,
+        tipoSolicitudId: data.tipoSolicitudId
       });
   }
   

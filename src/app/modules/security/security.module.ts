@@ -22,8 +22,8 @@ import { NgxCaptchaModule } from 'ngx-captcha';
     ResetPasswordComponent,
     UserCreationComponent,
     UserEditionComponent,
+    UserListComponent,
     RemoveUserComponent,
-    UserListComponent
   ],
   imports: [
     CommonModule,

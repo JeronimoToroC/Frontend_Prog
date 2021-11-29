@@ -38,7 +38,7 @@ export class DepartamentoEditionComponent implements OnInit {
     this.dataForm = this.fb.group({
       id: ["", [Validators.required]],
       name: ["", [Validators.required]],
-      facultadId: [0, [Validators.required]],
+      facultadId: [[Validators.required]],
     });
   }
 
@@ -61,7 +61,7 @@ export class DepartamentoEditionComponent implements OnInit {
     let model = new DepartamentoModel();
     model.name = this.GetDF["name"].value;
     model.id = this.GetDF["id"].value;    
-    model.facultadId=this.GetDF["facultadId"].value;
+    model.facultadId=parseInt(this.GetDF["facultadId"].value);
     this.service.EditRecord(model).subscribe({
       next: (data: DepartamentoModel) => {
         ShowGeneralMessage(ConfigurationData.UPDATED_MESSAGE)

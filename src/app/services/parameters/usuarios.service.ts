@@ -55,5 +55,13 @@ export class UsuariosService {
     return this.http.delete<any>(`${this.url}/usuarios/${_id}`);
   }
 
+  SendPassword(data:UserDataModel):Observable<UserDataModel> {
+      return this.http.post<UserDataModel>(`${this.url}/cambiar-contrasenia`,
+      {
+        email: data.email
+      });
+
+  }
+
 }
 
