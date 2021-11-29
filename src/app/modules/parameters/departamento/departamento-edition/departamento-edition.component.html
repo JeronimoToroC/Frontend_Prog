@@ -10,13 +10,13 @@
         
         <div class="row">
             <div class="input-field col s12">
-              <select id="selFacultad">
-                <option *ngFor="let a of facultadList" value="{{a.id}}">{{a.name}}</option>
-              </select>
+                <select id="selFacultad" formControlName="facultadId">
+                    <option *ngFor="let a of facultadList" value="{{a.id}}">{{a.name}}</option>
+                </select>
             <label>Seleccion Facultad</label>
             </div>
         </div>
-      
+    
         <div class="row">
             <div class="input-field col s12">
                 <button type="button" class="btn btn-success" (click)="SaveRecord()">Guardar</button>
