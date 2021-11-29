@@ -48,6 +48,10 @@ import { TipoSolicitudCreationComponent } from './tipo-solicitud/tipo-solicitud-
 import { TipoSolicitudEditionComponent } from './tipo-solicitud/tipo-solicitud-edition/tipo-solicitud-edition.component';
 import { TipoSolicitudListComponent } from './tipo-solicitud/tipo-solicitud-list/tipo-solicitud-list.component';
 import { RemoveTipoSolicitudComponent } from './tipo-solicitud/remove-tipo-solicitud/remove-tipo-solicitud.component';
+import { ComiteSolicitudCreationComponent } from './comite-solicitud/comite-solicitud-creation/comite-solicitud-creation.component';
+import { ComiteSolicitudEditionComponent } from './comite-solicitud/comite-solicitud-edition/comite-solicitud-edition.component';
+import { ComiteSolicitudListComponent } from './comite-solicitud/comite-solicitud-list/comite-solicitud-list.component';
+import { RemoveComiteSolicitudComponent } from './comite-solicitud/remove-comite-solicitud/remove-comite-solicitud.component';
 
 
 
@@ -96,7 +100,11 @@ import { RemoveTipoSolicitudComponent } from './tipo-solicitud/remove-tipo-solic
     TipoSolicitudCreationComponent,
     TipoSolicitudEditionComponent,
     TipoSolicitudListComponent,
-    RemoveTipoSolicitudComponent
+    RemoveTipoSolicitudComponent,
+    ComiteSolicitudCreationComponent,
+    ComiteSolicitudEditionComponent,
+    ComiteSolicitudListComponent,
+    RemoveComiteSolicitudComponent
 
 
   ],
