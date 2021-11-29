@@ -40,7 +40,7 @@ export class TipoSolicitudCreationComponent implements OnInit {
   SaveRecord(){
     let model = new TipoSolicitudModel();
     model.name = this.GetDF["name"].value;
-    model.format = this.GetDF["format"].value;    
+    model.format = this.GetDF["format"].value;
     this.service.SaveRecord(model).subscribe({
       next: (data: TipoSolicitudModel) => {
         ShowGeneralMessage(ConfigurationData.SAVED_MESSAGE)

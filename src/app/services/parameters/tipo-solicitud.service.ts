@@ -29,6 +29,7 @@ export class TipoSolicitudService {
       {
         name: data.name,
         format: data.format
+        //hola
       });
   }
 
