@@ -27,14 +27,16 @@ export class TipoSolicitudService {
   SaveRecord(data: TipoSolicitudModel): Observable<TipoSolicitudModel> {
     return this.http.post<TipoSolicitudModel>(`${this.url}/tipo-solicituds`,
       {
-        name: data.name
+        name: data.name,
+        format: data.format
       });
   }
 
   EditRecord(data: TipoSolicitudModel): Observable<TipoSolicitudModel> {
     return this.http.put<TipoSolicitudModel>(`${this.url}//tipo-solicituds/${data.id}`,
       {
-        name: data.name
+        name: data.name,
+        format: data.format
       });
   }
   

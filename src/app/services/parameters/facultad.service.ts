@@ -27,7 +27,7 @@ export class FacultadService {
   SaveRecord(data: FacultadModel): Observable<FacultadModel> {
     return this.http.post<FacultadModel>(`${this.url}/facultads`,
       {
-        nombre: data.name,
+        name: data.name,
         codigo: data.codigo
       });
   }
@@ -35,7 +35,7 @@ export class FacultadService {
   EditRecord(data: FacultadModel): Observable<FacultadModel> {
     return this.http.put<FacultadModel>(`${this.url}/facultads/${data.id}`,
       {
-        nombre: data.name,
+        name: data.name,
         codigo: data.codigo
       });
   }
