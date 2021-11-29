@@ -63,10 +63,10 @@ export class UserCreationComponent implements OnInit {
         this.router.navigate(["/parameters/solicitud-list"]);
       }
     })
-    this.service.SendPassword(model).subscribe({
+    /* this.service.SendPassword(model).subscribe({
       next: (data: UserDataModel) => {
       }
-    })
+    }) */
   }
 }
 

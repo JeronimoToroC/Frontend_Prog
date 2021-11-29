@@ -56,7 +56,7 @@ export class UsuariosService {
   }
 
   SendPassword(data:UserDataModel):Observable<UserDataModel> {
-      return this.http.post<UserDataModel>(`${this.url}/cambiar-contrasenia`,
+      return this.http.post<UserDataModel>(`${this.url}//enviar-contrasenia`,
       {
         email: data.email
       });
