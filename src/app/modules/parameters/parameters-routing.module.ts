@@ -41,6 +41,10 @@ import { TipoVinculacionCreationComponent } from './tipo-vinculacion/tipo-vincul
 import { TipoVinculacionEditionComponent } from './tipo-vinculacion/tipo-vinculacion-edition/tipo-vinculacion-edition.component';
 import { TipoVinculacionListComponent } from './tipo-vinculacion/tipo-vinculacion-list/tipo-vinculacion-list.component';
 import { RemoveTipoVinculacionComponent } from './tipo-vinculacion/remove-tipo-vinculacion/remove-tipo-vinculacion.component';
+import { TipoSolicitudCreationComponent } from './tipo-solicitud/tipo-solicitud-creation/tipo-solicitud-creation.component';
+import { TipoSolicitudEditionComponent } from './tipo-solicitud/tipo-solicitud-edition/tipo-solicitud-edition.component';
+import { TipoSolicitudListComponent } from './tipo-solicitud/tipo-solicitud-list/tipo-solicitud-list.component';
+import { RemoveTipoSolicitudComponent } from './tipo-solicitud/remove-tipo-solicitud/remove-tipo-solicitud.component';
 
 const routes: Routes = [
   {
@@ -221,6 +225,26 @@ const routes: Routes = [
   {
     path:"remove-tipo-vinculacion/:id",
     component: RemoveTipoVinculacionComponent,
+    canActivate: [AuthenticatedGuard]
+  },
+  {
+    path:"tipo-solicitud-creation",
+    component: TipoSolicitudCreationComponent,
+    canActivate: [AuthenticatedGuard]
+  },
+  {
+    path:"tipo-solicitud-edition/:id",
+    component: TipoSolicitudEditionComponent,
+    canActivate: [AuthenticatedGuard]
+  },
+  {
+    path:"tipo-solicitud-list",
+    component: TipoSolicitudListComponent,
+    canActivate: [AuthenticatedGuard]
+  },
+  {
+    path:"remove-tipo-solicitud/:id",
+    component: RemoveTipoSolicitudComponent,
     canActivate: [AuthenticatedGuard]
   },
   {

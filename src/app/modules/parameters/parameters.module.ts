@@ -44,6 +44,10 @@ import { TipoVinculacionCreationComponent } from './tipo-vinculacion/tipo-vincul
 import { TipoVinculacionEditionComponent } from './tipo-vinculacion/tipo-vinculacion-edition/tipo-vinculacion-edition.component';
 import { TipoVinculacionListComponent } from './tipo-vinculacion/tipo-vinculacion-list/tipo-vinculacion-list.component';
 import { RemoveTipoVinculacionComponent } from './tipo-vinculacion/remove-tipo-vinculacion/remove-tipo-vinculacion.component';
+import { TipoSolicitudCreationComponent } from './tipo-solicitud/tipo-solicitud-creation/tipo-solicitud-creation.component';
+import { TipoSolicitudEditionComponent } from './tipo-solicitud/tipo-solicitud-edition/tipo-solicitud-edition.component';
+import { TipoSolicitudListComponent } from './tipo-solicitud/tipo-solicitud-list/tipo-solicitud-list.component';
+import { RemoveTipoSolicitudComponent } from './tipo-solicitud/remove-tipo-solicitud/remove-tipo-solicitud.component';
 
 
 
@@ -88,7 +92,11 @@ import { RemoveTipoVinculacionComponent } from './tipo-vinculacion/remove-tipo-v
     TipoVinculacionCreationComponent,
     TipoVinculacionEditionComponent,
     TipoVinculacionListComponent,
-    RemoveTipoVinculacionComponent
+    RemoveTipoVinculacionComponent,
+    TipoSolicitudCreationComponent,
+    TipoSolicitudEditionComponent,
+    TipoSolicitudListComponent,
+    RemoveTipoSolicitudComponent
 
 
   ],
