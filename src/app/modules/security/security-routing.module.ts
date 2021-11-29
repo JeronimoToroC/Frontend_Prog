@@ -13,41 +13,41 @@ import { UserListComponent } from './users/user-list/user-list.component';
 
 const routes: Routes = [
   {
-    path:"login",
+    path: "login",
     component: LoginComponent,
     canActivate: [UnauthenticatedGuard]
   },
   {
-    path:"logout",
+    path: "logout",
     component: LogoutComponent,
     canActivate: [AuthenticatedGuard]
   },
   {
-    path:"change-password",
+    path: "change-password",
     component: ChangePasswordComponent,
     canActivate: [AuthenticatedGuard]
   },
   {
-    path:"reset-password",
+    path: "reset-password",
     component: ResetPasswordComponent
   },
   {
-    path:"user-creation",
+    path: "user-creation",
     component: UserCreationComponent,
-    canActivate: [AuthenticatedGuard]
+    canActivate: [UnauthenticatedGuard]
   },
   {
-    path:"user-edition",
+    path: "user-edition",
     component: UserEditionComponent,
     canActivate: [AuthenticatedGuard]
   },
   {
-    path:"user-list",
+    path: "user-list",
     component: UserListComponent,
     canActivate: [AuthenticatedGuard]
   },
   {
-    path:"remove-user",
+    path: "remove-user",
     component: RemoveUserComponent,
     canActivate: [AuthenticatedGuard]
   },

@@ -1,1 +1,78 @@
-<p>user-creation works!</p>
+<div class="general">
+  <form [formGroup]="dataForm" class="col s12">
+    <div class="secondDiv">
+      <h4>Registro de usuario</h4>
+
+      <label style="font-size: medium;" for="foto">Foto de perfil</label>
+      <div class="input-field col s3">
+        <input formControlName="foto" id="foto" type="file">
+      </div>
+
+      <div class="input-field col s3">
+        <input
+          formControlName="name"
+          id="name"
+          type="text"
+        >
+        <label for="name">Nombre</label>
+      </div>
+
+      <div class="input-field col s3">
+        <input
+          formControlName="lastName"
+          id="lastName"
+          type="text"
+        >
+        <label for="lastName">Apellidos</label>
+      </div>
+
+      <div class="input-field col s3">
+        <input
+          formControlName="email"
+          id="email"
+          type="text"
+        >
+        <label for="email">Correo electrónico</label>
+      </div>
+
+      <div class="input-field col s3">
+        <input
+          formControlName="document"
+          id="document"
+          type="text"
+        >
+        <label for="document">Documento de identidad</label>
+      </div>
+
+      <div class="input-field col s3">
+        <input
+          formControlName="cell"
+          id="cell"
+          type="text"
+        >
+        <label for="cell">Teléfono / Celular</label>
+      </div>
+      <div class="switch">
+        <label for="txtDescripcion" style="margin-bottom: 1rem; font-size: 1rem;">¿Crear cuenta como proponente?</label>
+        <label style="font-size: 1rem;">
+          No
+          <input type="checkbox" id="checkProponente" (click)="checkProp()">
+          <span class="lever"></span>
+          Sí
+        </label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+        <button
+        style="background-color: #063B70 width: 100%; margin-left: auto; left: auto; right: auto;"
+          type="button"
+          class="btn btn-success"
+          (click)="SaveRecord()"
+        >
+        Guardar
+        </button>
+      </div>
+    </div>
+  </form>
+</div>

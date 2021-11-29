@@ -9,3 +9,4 @@ export class UserDataModel{
     rolesId?: string; 
     foto?: string;
 }
+
