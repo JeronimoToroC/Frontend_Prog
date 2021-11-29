@@ -33,6 +33,7 @@ export class TipoSolicitudEditionComponent implements OnInit {
     this.dataForm = this.fb.group({
       id: ["", [Validators.required]],
       name: ["", [Validators.required]],
+      format: ["", [Validators.required]],
     });
   }
 
