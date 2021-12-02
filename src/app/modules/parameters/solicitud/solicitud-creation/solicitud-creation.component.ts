@@ -1,11 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { from } from 'rxjs';
 import { ConfigurationData } from 'src/app/config/ConfigurationData';
 import { LineasInvestigacionModel } from 'src/app/models/parameters/lineas-investigacion.model';
 import { ModalidadModel } from 'src/app/models/parameters/modalidad.model';
 import { SolicitudModel } from 'src/app/models/parameters/solicitud.model';
 import { TipoSolicitudModel } from 'src/app/models/parameters/tipo-solicitud.model';
+import { UploadFile } from 'src/app/models/parameters/uploaded.file.model';
 import { LineasInvestigacionService } from 'src/app/services/parameters/lineas-investigacion.service';
 import { ModalidadService } from 'src/app/services/parameters/modalidad.service';
 import { SolicitudService } from 'src/app/services/parameters/solicitud.service';
@@ -21,10 +23,12 @@ declare const InitSelect: any;
 })
 export class SolicitudCreationComponent implements OnInit {
 
+  uploadedFile: boolean = false;
   dataForm: FormGroup = new FormGroup({});
   lineasInvestlist: LineasInvestigacionModel[] = [];
   modalidadList: ModalidadModel[] = [];
   tipoSolList: TipoSolicitudModel[] = [];
+  mainFormatForm: FormGroup = new FormGroup({});
 
   constructor(
     private fb:FormBuilder,
@@ -38,6 +42,13 @@ export class SolicitudCreationComponent implements OnInit {
   ngOnInit(): void {
     this.FormBuilding();
     this.GetDataForSelects();
+    this.FormMainFormat();
+  }
+
+  FormMainFormat() {
+    this.mainFormatForm = this.fb.group({
+      file: ["", []]
+    });
   }
 
   FormBuilding(){
@@ -97,6 +108,24 @@ export class SolicitudCreationComponent implements OnInit {
         setTimeout(() => {
           InitSelect("selTipoSol");
         }, 100);
+      }
+    });
+  }
+
+  UploadFile(event:any){
+    if(event.target.files.length > 0){
+      const file = event.target.files[0];
+      this.mainFormatForm.controls["file"].setValue(file);
+    }
+  }
+
+  SubmitFileToServer(){
+    const form = new FormData();
+    form.append("file", this.mainFormatForm.controls["file"].value)
+    this.service.UploadMainFormat(form).subscribe({
+      next: (data: UploadFile) => {
+        this.dataForm.controls["file"].setValue(data.filename);
+        this.uploadedFile = true;
       }
     });
   }
