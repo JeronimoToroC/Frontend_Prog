@@ -1,9 +1,15 @@
+import { SolicitudModel } from "./solicitud.model";
+
 export class ProponenteModel {
     id?: number;
-    nombre?: string;
-    otros_nombres?:string;
-    primer_apellido?:string;
-    segundo_apellido?:string;
-    correo?:string;
-    celular?:string;
+    name?: string;
+    lastName?: string;
+    document?: string;
+    password?: string;
+    email?: string;
+    cell?: string;
+    rolesId?: string;
+    foto?: string;
+    tipoVinculacionId?: number;
+    solicituds?: SolicitudModel[];
 }

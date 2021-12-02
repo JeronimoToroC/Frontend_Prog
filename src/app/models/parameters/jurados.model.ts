@@ -1,7 +1,12 @@
 export class JuradosModel {
     id?: number;
-    nombre?: string;
-    telefono?:string;
-    correo?:string;
+    name?: string;
+    lastName?: string;
+    document?: string;
+    password?: string;
+    email?: string;
+    cell?: string;
+    rolesId?: string;
+    foto?: string;
     entidad?:string;
 }
