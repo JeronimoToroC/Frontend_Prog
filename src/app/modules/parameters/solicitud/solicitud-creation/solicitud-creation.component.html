@@ -1,5 +1,22 @@
 <div class="row">
+  <form  [formGroup]="mainFormatForm" class="col s12">
+    <div class="row">
+      <div class="col s12 center-align">
+        <img *ngIf="!uploadedFile"  src="assets/formats/no-file-found.png" class="noFileImage">
+        <img *ngIf="uploadedFile" src="assets/formats/check-blue.png" class="noFileImage">
+      </div>
+      <div class="row">
+        <div class="col s12 center-align">
+          <input class="btn orange" type="file" (change)= "UploadFile($event)" name="file" /> &nbsp; 
+          <button class=" btn btn-sucess" type="button" (click)="SumbitFileToServer()"></button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+<div class="row">
   <form [formGroup]="dataForm" class="col s12">
+    <input type="hidden" formControlName = "file"/>
     <div class="row">
       <div class="input-field col s3">
           <input formControlName="workName" id="txtNombre" type="text">
@@ -12,10 +29,6 @@
       <div class="input-field col s3">
           <input formControlName="comiteType" id="tipoComite" type="text">
           <label for="comiteType">Tipo de Cómite</label>
-      </div>
-      <div class="input-field col s3">
-          <input formControlName="file" id="archivo" type="file">
-          <label for="archivo">Archivo</label>
       </div>
       <div class="input-field col s3">
           <input formControlName="date_rad" id="dateRad" type="date">
