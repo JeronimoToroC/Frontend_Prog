@@ -126,6 +126,7 @@ export class SolicitudCreationComponent implements OnInit {
       next: (data: UploadFile) => {
         this.dataForm.controls["file"].setValue(data.filename);
         this.uploadedFile = true;
+        this.uploadedFilename = data.filename
       }
     });
   }
