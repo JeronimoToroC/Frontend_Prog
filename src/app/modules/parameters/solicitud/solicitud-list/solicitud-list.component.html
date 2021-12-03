@@ -3,8 +3,10 @@
 
 <fieldset>
     <legend>Listado de Solicitudes</legend>
-    <div *ngIf="isShow(r)">
-        <a class="btn btn-warning orange" routerLink="/parameters/evaluacion-solicitud-creation">Notificar a Jurado</a>
+    <div *ngFor="let r of recordUserList">
+        <div *ngIf="isShow(r)">
+            <a class="btn btn-warning orange" routerLink="/parameters/evaluacion-solicitud-creation">Notificar a Jurado</a>
+        </div>
     </div>
     <table>
         <thead>

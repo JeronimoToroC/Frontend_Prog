@@ -1,6 +1,6 @@
 import { JuradosModel } from "./jurados.model";
 
-export class VehicleModel {
+export class EvaluacionSolicitudModel {
     id?: number;
     id_solicitud?: number;
     jurados?: JuradosModel[];
