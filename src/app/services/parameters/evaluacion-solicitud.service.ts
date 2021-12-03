@@ -2,7 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { ConfigurationData } from 'src/app/config/ConfigurationData';
-import { UploadedFile } from 'src/app/models/parameters/uploaded.file.model';
+import { UploadFile } from 'src/app/models/parameters/uploaded.file.model';
 import { EvaluacionSolicitudModel } from 'src/app/models/parameters/evaluacion-solicitud.model';
 import { LocalStorageService } from '../shared/local-storage.service';
 
@@ -10,7 +10,7 @@ import { LocalStorageService } from '../shared/local-storage.service';
   providedIn: 'root'
 })
 export class EvaluacionSolicitudService {
-  url: string = ConfigurationData.BUSSINESS_MS_URL;
+  url: string = ConfigurationData.PRINCIPAL_MS_URL;
   tk: string = "";
   constructor(private http: HttpClient,
     private localStorageService: LocalStorageService) {

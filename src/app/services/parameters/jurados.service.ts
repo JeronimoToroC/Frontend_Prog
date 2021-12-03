@@ -28,6 +28,7 @@ export class JuradosService {
   SaveRecord(data: JuradosModel): Observable<JuradosModel>{
     return this.http.post<JuradosModel>(`${this.url}/jurados`,
     {
+
       name: data.name
     },
     {

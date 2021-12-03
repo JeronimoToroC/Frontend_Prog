@@ -12,6 +12,7 @@ import { UserDataModel } from 'src/app/models/security/user-data.model';
 export class SolicitudListComponent implements OnInit {
 
   recordList: SolicitudModel[] = [];
+  recordUserList: UserDataModel[] = [];
 
   p: number = 1;
   pageSize: number = 3;
