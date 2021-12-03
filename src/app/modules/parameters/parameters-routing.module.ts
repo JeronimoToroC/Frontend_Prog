@@ -49,6 +49,11 @@ import { ComiteSolicitudCreationComponent } from './comite-solicitud/comite-soli
 import { ComiteSolicitudEditionComponent } from './comite-solicitud/comite-solicitud-edition/comite-solicitud-edition.component';
 import { ComiteSolicitudListComponent } from './comite-solicitud/comite-solicitud-list/comite-solicitud-list.component';
 import { RemoveComiteSolicitudComponent } from './comite-solicitud/remove-comite-solicitud/remove-comite-solicitud.component';
+import { EvaluacionSolicitudCreationComponent } from './evaluacion-solicitud/evaluacion-solicitud-creation/evaluacion-solicitud-creation.component';
+import { EvaluacionSolicitudEditionComponent } from './evaluacion-solicitud/evaluacion-solicitud-edition/evaluacion-solicitud-edition.component';
+import { EvaluacionSolicitudListComponent } from './evaluacion-solicitud/evaluacion-solicitud-list/evaluacion-solicitud-list.component';
+import { RemoveEvaluacionSolicitudComponent } from './evaluacion-solicitud/remove-evaluacion-solicitud/remove-evaluacion-solicitud.component';
+
 
 const routes: Routes = [
   {
@@ -69,6 +74,26 @@ const routes: Routes = [
   {
     path:"remove-jurados/:id",
     component: RemoveJuradosComponent,
+    canActivate: [AuthenticatedGuard]
+  },
+  {
+    path:"evaluacion-solicitud-creation",
+    component: EvaluacionSolicitudCreationComponent,
+    canActivate: [AuthenticatedGuard]
+  },
+  {
+    path:"evaluacion-solicitud-edition/:id",
+    component: EvaluacionSolicitudEditionComponent,
+    canActivate: [AuthenticatedGuard]
+  },
+  {
+    path:"evaluacion-solicitud-list",
+    component: EvaluacionSolicitudListComponent,
+    canActivate: [AuthenticatedGuard]
+  },
+  {
+    path:"remove-evaluacion-solicitud/:id",
+    component: RemoveEvaluacionSolicitudComponent,
     canActivate: [AuthenticatedGuard]
   },
   {
