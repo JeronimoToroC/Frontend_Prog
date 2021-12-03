@@ -14,7 +14,7 @@ declare const ShowGeneralMessage: any;
 export class RemoveSolicitudComponent implements OnInit {
   id: number = 0;
   workName: string = "";
-  date_rad: string = "";
+  dateRad: string = "";
   description: string = "";
   file: any = "";
   comiteType: any = "";
@@ -33,10 +33,10 @@ export class RemoveSolicitudComponent implements OnInit {
     let id = this.route.snapshot.params["id"];
     this.service.SearchRecord(id).subscribe({
       next: (data: SolicitudModel) => {
-        if (data.id && data.date_rad && data.workName && data.description && data.comiteType && data.file ) {
+        if (data.id && data.dateRad && data.workName && data.description && data.comiteType && data.file ) {
           this.id = data.id;
           this.workName = data.workName;
-          this.date_rad = data.date_rad;
+          this.dateRad = data.dateRad;
           this.description = data.description;
           this.comiteType = data.comiteType;
           this.file = data.file
