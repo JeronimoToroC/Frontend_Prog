@@ -1,14 +1,15 @@
+
 <div class="row">
   <form  [formGroup]="mainFormatForm" class="col s12">
     <div class="row">
       <div class="col s12 center-align">
-        <img *ngIf="!uploadedFile"  src="assets/formats/no-file-found.png" class="noFileImage">
-        <img *ngIf="uploadedFile" src="assets/formats/check-blue.png" class="noFileImage">
+        <img *ngIf="!uploadedFile"  src="assets/images/no-file-found.png" class="noFileImage">
+        <img *ngIf="uploadedFile" src="assets/images/check-blue.png" class="noFileImage">
       </div>
       <div class="row">
         <div class="col s12 center-align">
           <input class="btn orange" type="file" (change)= "UploadFile($event)" name="file" /> &nbsp; 
-          <button class=" btn btn-sucess" type="button" (click)="SumbitFileToServer()"></button>
+          <button class=" btn btn-sucess" type="button" (click)="SubmitFileToServer()"></button>
         </div>
       </div>
     </div>
@@ -22,16 +23,12 @@
           <input formControlName="workName" id="txtNombre" type="text">
           <label for="txtNombre">Nombre del Trabajo</label>
       </div>
-      <div class="input-field col s3">
+      <div class="input-field col s6">
           <input formControlName="description" id="txtDescripcion" type="text">
           <label for="txtDescripcion">Descripcion</label>
       </div>
       <div class="input-field col s3">
-          <input formControlName="comiteType" id="tipoComite" type="text">
-          <label for="comiteType">Tipo de Cómite</label>
-      </div>
-      <div class="input-field col s3">
-          <input formControlName="date_rad" id="dateRad" type="date">
+          <input formControlName="dateRad" id="dateRad" type="date">
           <label for="dateRad">Fecha</label>
       </div>
       
@@ -39,24 +36,37 @@
 
     <div class="row">
       <div class="input-field col s12">
-        <select id="selLineas">
+        <select id="selLineas" formControlName="lineasInvestigacionId">
           <option *ngFor="let a of lineasInvestlist" value="{{a.id}}">{{a.name}}</option>
         </select>
       <label>Seleccion Lineas de Investigacion</label>
       </div>
       <div class="input-field col s12">
-        <select id="selModalidad">
+        <select id="selModalidad" formControlName="modalidadId">
           <option *ngFor="let a of modalidadList" value="{{a.id}}">{{a.name}}</option>
         </select>
       <label>Seleccion Modalidad</label>
       </div>
       <div class="input-field col s12">
-        <select id="selTipoSol">
+        <select id="selTipoSol" formControlName="tipoSolicitudId">
           <option *ngFor="let a of tipoSolList" value="{{a.id}}">{{a.name}}</option>
         </select>
       <label>Seleccion Tipo de Solicitud</label>
-      </div>      
+      </div>  
+      <div class="input-field col s12">
+        <select multiple id="selTipoCom" formControlName="comiteType" type="object">
+          <option *ngFor="let a of tipoComList" value="{{a.id}}">{{a.name}}</option>
+        </select>
+        <label>Seleccion Tipo de Cómite</label>
+      </div>
+      <!-- <div class="input-field col s12">
+        <select id="selTipoCom" formControlName="comiteType">
+          <option *ngFor="let a of tipoComList" value="{{a.id}}">{{a.name}}</option>
+        </select>
+      <label>Seleccion Tipo de Cómite</label>
+      </div>  -->
     </div>
+    
 
     <div class="row">
       <div class="input-field col s12">

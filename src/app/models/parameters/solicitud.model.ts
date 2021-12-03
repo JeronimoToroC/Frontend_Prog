@@ -1,8 +1,9 @@
+import {ComiteModel} from "./comite.model"
 export class SolicitudModel {
     id?: number;
-    date_rad?: string;
+    dateRad?: string;
     workName?:string;
-    comiteType?:any;
+    comiteType?:ComiteModel[];
     file?:any;
     description?:string;
     lineasInvestigacionId?: number;

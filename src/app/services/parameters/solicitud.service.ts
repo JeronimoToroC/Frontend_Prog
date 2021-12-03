@@ -32,7 +32,7 @@ export class SolicitudService {
         comiteType: data.comiteType,
         description: data.description,
         file: data.file,
-        date_rad: data.date_rad,
+        dateRad: data.dateRad,
         lineasInvestigacionId: data.lineasInvestigacionId,
         modalidadId: data.modalidadId,
         tipoSolicitudId: data.tipoSolicitudId
@@ -46,7 +46,7 @@ export class SolicitudService {
         comiteType: data.comiteType,
         description: data.description,
         file: data.file,
-        date_rad: data.date_rad,
+        dateRad: data.dateRad,
         lineasInvestigacionId: data.lineasInvestigacionId,
         modalidadId: data.modalidadId,
         tipoSolicitudId: data.tipoSolicitudId

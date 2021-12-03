@@ -36,7 +36,7 @@ export class SolicitudEditionComponent implements OnInit {
       description: ["", [Validators.required]],
       comiteType: ["", [Validators.required]],
       file: ["", [Validators.required]],
-      date_rad: ["", [Validators.required]],
+      dateRad: ["", [Validators.required]],
     });
   }
 
@@ -54,7 +54,7 @@ export class SolicitudEditionComponent implements OnInit {
         this.GetDF["description"].setValue(data.description);
         this.GetDF["comiteType"].setValue(data.comiteType);
         this.GetDF["file"].setValue(data.file);
-        this.GetDF["date_rad"].setValue(data.date_rad);
+        this.GetDF["dateRad"].setValue(data.dateRad);
       
       }
     });
@@ -66,7 +66,7 @@ export class SolicitudEditionComponent implements OnInit {
     model.description = this.GetDF["description"].value;
     model.comiteType = this.GetDF["comiteType"].value;
     model.file = this.GetDF["file"].value;
-    model.date_rad = this.GetDF["date_rad"].value;
+    model.dateRad = this.GetDF["dateRad"].value;
     model.id = this.GetDF["id"].value;
     this.service.EditRecord(model).subscribe({
       next: (data: SolicitudModel) => {
