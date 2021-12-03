@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { SolicitudModel } from 'src/app/models/parameters/solicitud.model';
 import { SolicitudService } from 'src/app/services/parameters/solicitud.service';
+import { UserDataModel } from 'src/app/models/security/user-data.model';
+
 
 @Component({
   selector: 'app-solicitud-list',
@@ -21,6 +23,14 @@ export class SolicitudListComponent implements OnInit {
 
   ngOnInit(): void {
     this.ShowRecordList();
+  }
+
+   isShow(r: UserDataModel) {
+    if (r.rolesId === "admin") {
+      return false
+    } else {
+      return true
+    }
   }
 
   ShowRecordList(){

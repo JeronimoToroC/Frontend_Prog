@@ -52,6 +52,10 @@ import { ComiteSolicitudCreationComponent } from './comite-solicitud/comite-soli
 import { ComiteSolicitudEditionComponent } from './comite-solicitud/comite-solicitud-edition/comite-solicitud-edition.component';
 import { ComiteSolicitudListComponent } from './comite-solicitud/comite-solicitud-list/comite-solicitud-list.component';
 import { RemoveComiteSolicitudComponent } from './comite-solicitud/remove-comite-solicitud/remove-comite-solicitud.component';
+import { EvaluacionSolicitudCreationComponent } from './evaluacion-solicitud/evaluacion-solicitud-creation/evaluacion-solicitud-creation.component';
+import { EvaluacionSolicitudEditionComponent } from './evaluacion-solicitud/evaluacion-solicitud-edition/evaluacion-solicitud-edition.component';
+import { EvaluacionSolicitudListComponent } from './evaluacion-solicitud/evaluacion-solicitud-list/evaluacion-solicitud-list.component';
+import { RemoveEvaluacionSolicitudComponent } from './evaluacion-solicitud/remove-evaluacion-solicitud/remove-evaluacion-solicitud.component';
 
 
 
@@ -104,7 +108,11 @@ import { RemoveComiteSolicitudComponent } from './comite-solicitud/remove-comite
     ComiteSolicitudCreationComponent,
     ComiteSolicitudEditionComponent,
     ComiteSolicitudListComponent,
-    RemoveComiteSolicitudComponent
+    RemoveComiteSolicitudComponent,
+    EvaluacionSolicitudCreationComponent,
+    EvaluacionSolicitudEditionComponent,
+    EvaluacionSolicitudListComponent,
+    RemoveEvaluacionSolicitudComponent
 
 
   ],

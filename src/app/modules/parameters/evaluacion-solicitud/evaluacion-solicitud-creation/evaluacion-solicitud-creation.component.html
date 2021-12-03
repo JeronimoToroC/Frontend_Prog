@@ -1,0 +1,32 @@
+<div class="row">
+    <form [formGroup]="dataForm" class="col s12">
+      <div class="row">
+        <div class="input-field col s12">
+          <select id="selSolicitud" formControlName="solicitudId">
+            <option *ngFor="let a of solicitudList" value="{{a.id}}">{{a.workName}}</option>
+          </select>
+        <label>Seleccion de Solicitud</label>
+        </div>
+      </div>
+      <div class="input-field col s6">
+        <select id="selJurados" multiple formControlName="jurados">
+            <option *ngFor="let c of juradosList" value="{{c.id}}">{{c.name}}</option>
+        </select>
+        <label>Seleccion de Jurados</label>
+    </div>
+
+      <div class="row">
+        <div class="input-field col s12">
+          <input formControlName="respuesta" id="txtRespuesta" type="checkbox">
+          <label for="txtRespuesta">Respuesta</label>
+        </div>
+      </div>
+  
+      <div class="row">
+        <div class="input-field col s12">
+          <button type="button" class="btn btn-success" (click)="SaveRecord()">Guardar</button>
+          &nbsp;<a class="btn btn-warning orange" routerLink="/parameters/departamento-list">Cancelar</a>
+        </div>
+      </div>
+    </form>
+  </div>
