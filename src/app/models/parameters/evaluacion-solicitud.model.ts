@@ -1,9 +1,10 @@
 import { JuradosModel } from "./jurados.model";
+import { SolicitudModel } from "./solicitud.model";
 
 export class EvaluacionSolicitudModel {
     id?: number;
-    id_solicitud?: number;
-    jurados?: JuradosModel[];
+    solicitudId?: SolicitudModel[];
+    juradosId?: JuradosModel[];
     fechaInvitacion?: string;
     fechaRespuesta?: string;
     respuesta?: boolean;
