@@ -38,9 +38,9 @@ export class EvaluacionSolicitudCreationComponent implements OnInit {
 
   FormBuilding(){
     this.dataForm = this.fb.group({
-      solicitudId: ["",[Validators.required]],
+      solicitudId: [[Validators.required]],
       respuesta: ["",[Validators.required]],
-      jurados: ["",[Validators.required]],
+      juradosId: [[Validators.required]],
     });
   }
 
@@ -51,8 +51,8 @@ export class EvaluacionSolicitudCreationComponent implements OnInit {
   SaveRecord(){
     let model = new EvaluacionSolicitudModel();
     model.respuesta = this.GetDF["respuesta"].value;
-    model.jurados = this.GetDF["jurados"].value;
-    model.id_solicitud=parseInt(this.GetDF["solicitudId"].value)
+    model.juradosId =(this.GetDF["juradosId"].value);
+    model.solicitudId=(this.GetDF["solicitudId"].value);
     model.fechaInvitacion = new Date().toLocaleDateString();
     model.fechaRespuesta = "hola fecha respuesta";
     model.observaciones = "observaciones";

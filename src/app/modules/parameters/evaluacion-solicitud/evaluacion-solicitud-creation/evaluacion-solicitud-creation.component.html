@@ -7,17 +7,18 @@
           </select>
         <label>Seleccion de Solicitud</label>
         </div>
+      <div class="row">
+        </div>
+          <div class="input-field col s12">
+          <select id="selJurados" formControlName="juradosId">
+              <option *ngFor="let c of juradosList" value="{{c.id}}">{{c.name}}</option>
+          </select>
+          <label>Seleccion de Jurados</label>
+        </div>
       </div>
-      <div class="input-field col s6">
-        <select id="selJurados" multiple formControlName="jurados">
-            <option *ngFor="let c of juradosList" value="{{c.id}}">{{c.name}}</option>
-        </select>
-        <label>Seleccion de Jurados</label>
-    </div>
-
       <div class="row">
         <div class="input-field col s12">
-          <input formControlName="respuesta" id="txtRespuesta" type="checkbox">
+          <input formControlName="respuesta" id="txtRespuesta" type="radio">
           <label for="txtRespuesta">Respuesta</label>
         </div>
       </div>

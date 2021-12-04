@@ -26,11 +26,11 @@ export class SolicitudListComponent implements OnInit {
     this.ShowRecordList();
   }
 
-   isShow(r: UserDataModel) {
-    if (r.rolesId === "admin") {
-      return false
-    } else {
+  isShow(r: UserDataModel) {
+    if (r.rolesId !== "administrador") {
       return true
+    } else {
+      return false
     }
   }
 
