@@ -3,13 +3,13 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { ConfigurationData } from 'src/app/config/ConfigurationData';
 import { UploadFile } from 'src/app/models/parameters/uploaded.file.model';
-import { EvaluacionSolicitudModel } from 'src/app/models/parameters/evaluacion-solicitud.model';
+import { SolicitudJuradoModel } from 'src/app/models/parameters/solicitud-jurado.model';
 import { LocalStorageService } from '../shared/local-storage.service';
 
 @Injectable({
   providedIn: 'root'
 })
-export class EvaluacionSolicitudService {
+export class SolicitudJuradoService {
   url: string = ConfigurationData.PRINCIPAL_MS_URL;
   tk: string = "";
   constructor(private http: HttpClient,
@@ -17,22 +17,20 @@ export class EvaluacionSolicitudService {
     this.tk = this.localStorageService.GetToken();
   }
 
-  GetRecordList(): Observable<EvaluacionSolicitudModel[]> {
-    return this.http.get<EvaluacionSolicitudModel[]>(`${this.url}/evaluacion-solicituds`);
+  GetRecordList(): Observable<SolicitudJuradoModel[]> {
+    return this.http.get<SolicitudJuradoModel[]>(`${this.url}/solicitud-jurados`);
   }
 
-  SearchRecord(id: number): Observable<EvaluacionSolicitudModel> {
-    return this.http.get<EvaluacionSolicitudModel>(`${this.url}/evaluacion-solicituds/${id}`);
+  SearchRecord(id: number): Observable<SolicitudJuradoModel> {
+    return this.http.get<SolicitudJuradoModel>(`${this.url}/solicitud-jurados/${id}`);
   }
 
-  SaveRecord(data: EvaluacionSolicitudModel): Observable<EvaluacionSolicitudModel> {
-    return this.http.post<EvaluacionSolicitudModel>(`${this.url}/evaluacion-solicituds`,
+  SaveRecord(data: SolicitudJuradoModel): Observable<SolicitudJuradoModel> {
+    return this.http.post<SolicitudJuradoModel>(`${this.url}/solicitud-jurados`,
       {
         solicitudId: data.solicitudId,
         juradosId: data.juradosId,
-        fechaRespuesta: data.fechaRespuesta,
-        respuesta: data.respuesta,
-        observaciones: data.observaciones
+        fechaInvitacion: data.fechaInvitacion,
       },
       {
         headers: new HttpHeaders({
@@ -41,15 +39,13 @@ export class EvaluacionSolicitudService {
       });
   }
 
-  EditRecord(data: EvaluacionSolicitudModel): Observable<EvaluacionSolicitudModel> {
-    return this.http.put<EvaluacionSolicitudModel>(`${this.url}/evaluacion-solicituds/${data.id}`,
+  EditRecord(data: SolicitudJuradoModel): Observable<SolicitudJuradoModel> {
+    return this.http.put<SolicitudJuradoModel>(`${this.url}/solicitud-jurados/${data.id}`,
       {
         id: data.id,
         solicitudId: data.solicitudId,
         juradosId: data.juradosId,
-        fechaRespuesta: data.fechaRespuesta,
-        respuesta: data.respuesta,
-        observaciones: data.observaciones
+        fechaInvitacion: data.fechaInvitacion,
       },
       {
         headers: new HttpHeaders({
@@ -60,12 +56,19 @@ export class EvaluacionSolicitudService {
 
 
   RemoveRecord(id: number): Observable<any> {
-    return this.http.delete<any>(`${this.url}/evaluacion-solicituds/${id}`,
+    return this.http.delete<any>(`${this.url}/solicitud-jurados/${id}`,
       {
         headers: new HttpHeaders({
           Authorization: `Bearer ${this.tk}`
         })
       });
   }
-
+  MensajeInvitación(data: SolicitudJuradoModel): Observable<SolicitudJuradoModel> {
+    return this.http.post<SolicitudJuradoModel>(`${this.url}/recuperar-contrasenia`,
+      {
+        juradosId: data.juradosId,
+        linkaceptar: data.linkaceptar,
+        linkrechazar: data.linkrechazar,
+      });
+  }
 }

@@ -53,7 +53,9 @@ import { EvaluacionSolicitudCreationComponent } from './evaluacion-solicitud/eva
 import { EvaluacionSolicitudEditionComponent } from './evaluacion-solicitud/evaluacion-solicitud-edition/evaluacion-solicitud-edition.component';
 import { EvaluacionSolicitudListComponent } from './evaluacion-solicitud/evaluacion-solicitud-list/evaluacion-solicitud-list.component';
 import { RemoveEvaluacionSolicitudComponent } from './evaluacion-solicitud/remove-evaluacion-solicitud/remove-evaluacion-solicitud.component';
-
+import { SolicitudJuradoCreationComponent } from './solicitud-jurado/solicitud-jurado-creation/solicitud-jurado-creation.component';
+import { EvaluacionSolicitudAceptarComponent } from './evaluacion-solicitud/evaluacion-solicitud-aceptar/evaluacion-solicitud-aceptar.component';
+import { EvaluacionSolicitudRechazarComponent } from './evaluacion-solicitud/evaluacion-solicitud-rechazar/evaluacion-solicitud-rechazar.component';
 
 const routes: Routes = [
   {
@@ -77,6 +79,11 @@ const routes: Routes = [
     canActivate: [AuthenticatedGuard]
   },
   {
+    path:"solicitud-jurado-creation",
+    component: SolicitudJuradoCreationComponent,
+    canActivate: [AuthenticatedGuard]
+  },
+  {
     path:"evaluacion-solicitud-creation",
     component: EvaluacionSolicitudCreationComponent,
     canActivate: [AuthenticatedGuard]
@@ -89,6 +96,16 @@ const routes: Routes = [
   {
     path:"evaluacion-solicitud-list",
     component: EvaluacionSolicitudListComponent,
+    canActivate: [AuthenticatedGuard]
+  },
+  {
+    path:"evaluacion-solicitud-aceptar",
+    component: EvaluacionSolicitudAceptarComponent,
+    canActivate: [AuthenticatedGuard]
+  },
+  {
+    path:"evaluacion-solicitud-rechazar",
+    component: EvaluacionSolicitudRechazarComponent,
     canActivate: [AuthenticatedGuard]
   },
   {
