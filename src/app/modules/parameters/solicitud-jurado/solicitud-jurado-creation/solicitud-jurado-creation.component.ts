@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ConfigurationData } from 'src/app/config/ConfigurationData';
-import { EvaluacionSolicitudModel } from 'src/app/models/parameters/evaluacion-solicitud.model';
-import { EvaluacionSolicitudService } from 'src/app/services/parameters/evaluacion-solicitud.service';
+import { SolicitudJuradoModel } from 'src/app/models/parameters/solicitud-jurado.model';
+import { SolicitudJuradoService } from 'src/app/services/parameters/solicitud-jurado.service';
 import { SolicitudModel } from 'src/app/models/parameters/solicitud.model';
 import { SolicitudService } from 'src/app/services/parameters/solicitud.service';
 import { JuradosModel } from 'src/app/models/parameters/jurados.model';
@@ -12,21 +12,23 @@ import { JuradosService } from 'src/app/services/parameters/jurados.service';
 declare const ShowGeneralMessage: any;
 declare const InitSelect: any;
 
+
 @Component({
-  selector: 'app-evaluacion-solicitud-creation',
-  templateUrl: './evaluacion-solicitud-creation.component.html',
-  styleUrls: ['./evaluacion-solicitud-creation.component.css']
+  selector: 'app-SolicitudJurado-creation',
+  templateUrl: './solicitud-jurado-creation.component.html',
+  styleUrls: ['./solicitud-jurado-creation.component.css']
 })
-export class EvaluacionSolicitudCreationComponent implements OnInit {
+export class SolicitudJuradoCreationComponent implements OnInit {
 
   dataForm: FormGroup = new FormGroup({});
   solicitudList: SolicitudModel[] = [];
   juradosList: JuradosModel[] = [];
+
   
   constructor(
     private fb:FormBuilder,
     private router: Router,
-    private service: EvaluacionSolicitudService,
+    private service: SolicitudJuradoService,
     private solicitudService: SolicitudService,
     private juradosService: JuradosService,
   ) { }
@@ -48,15 +50,14 @@ export class EvaluacionSolicitudCreationComponent implements OnInit {
   }
 
   SaveRecord(){
-    let model = new EvaluacionSolicitudModel();
-    model.respuesta = false;
+    let model = new SolicitudJuradoModel();
     model.juradosId =(this.GetDF["juradosId"].value);
     model.solicitudId=(this.GetDF["solicitudId"].value);
     model.fechaInvitacion = new Date().toLocaleDateString();
     this.service.SaveRecord(model).subscribe({
-      next: (data: EvaluacionSolicitudModel) => {
+      next: (data: SolicitudJuradoModel) => {
         ShowGeneralMessage(ConfigurationData.SAVED_MESSAGE)
-        this.router.navigate(["/parameters/EvaluacionSolicitud-list"]);
+        this.router.navigate(["/parameters/solicitud-list"]);
       }
     })
   }
@@ -78,5 +79,18 @@ export class EvaluacionSolicitudCreationComponent implements OnInit {
         }, 100);
       }
     });
+  }
+
+  MensajeInvitation(){
+    let model = new SolicitudJuradoModel();
+    model.juradosId =(this.GetDF["juradosId"].value);
+    model.linkaceptar = "http://localhost:4200/parameters/";
+    model.linkrechazar = "http://localhost:4200/parameters/";
+    this.service.MensajeInvitación(model).subscribe({
+      next: (data: SolicitudJuradoModel) => {
+        ShowGeneralMessage(ConfigurationData.SAVED_MESSAGE)
+        this.router.navigate(["/home"]);
+      }
+    })
   }
 }
