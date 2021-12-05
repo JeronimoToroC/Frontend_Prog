@@ -1,0 +1,23 @@
+<div class="row">
+    <form [formGroup]="dataForm" class="col s12">
+      <div class="row">
+        <div class="input-field col s12">
+          <input formControlName="observaciones" id="txtObservaciones" type="text">
+          <label for="txtObservaciones">Observaciónes</label>
+        </div>
+      </div>
+      <label><input type="checkbox" formControlName="cb"> Accept it</label>
+        <div style="color: red; padding-top: 0.2rem" *ngIf="formGroup.hasError('required', 'cb')">
+            Required
+        </div>
+        <hr>
+        <div>
+  </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <button type="button" class="btn btn-success" [disabled]="formGroup.invalid" (click)="SaveRecord()">Guardar</button>
+          &nbsp;<a class="btn btn-warning orange" routerLink="/parameters/comite-list">Cancelar</a>
+        </div>
+      </div>
+    </form>
+  </div>

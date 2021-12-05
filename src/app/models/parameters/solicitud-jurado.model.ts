@@ -1,11 +1,11 @@
 import { JuradosModel } from "./jurados.model";
 import { SolicitudModel } from "./solicitud.model";
 
-export class EvaluacionSolicitudModel {
+export class SolicitudJuradoModel {
     id?: number;
     solicitudId?: SolicitudModel[];
     juradosId?: JuradosModel[];
-    fechaRespuesta?: string;
-    respuesta?: boolean;
-    observaciones?: string;
+    fechaInvitacion?: string;
+    linkaceptar?: string;
+    linkrechazar?: string;
 }
