@@ -7,7 +7,7 @@
         </div>
       </div>
       <label><input type="checkbox" formControlName="cb"> Accept it</label>
-        <div style="color: red; padding-top: 0.2rem" *ngIf="formGroup.hasError('required', 'cb')">
+        <div style="color: red; padding-top: 0.2rem" *ngIf="dataForm.hasError('required', 'cb')">
             Required
         </div>
         <hr>
@@ -15,7 +15,7 @@
   </div>
       <div class="row">
         <div class="input-field col s12">
-          <button type="button" class="btn btn-success" [disabled]="formGroup.invalid" (click)="SaveRecord()">Guardar</button>
+          <button type="button" class="btn btn-success" [disabled]="dataForm.invalid" (click)="SaveRecord()">Guardar</button>
           &nbsp;<a class="btn btn-warning orange" routerLink="/parameters/comite-list">Cancelar</a>
         </div>
       </div>

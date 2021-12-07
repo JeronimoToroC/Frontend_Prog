@@ -54,8 +54,8 @@ import { EvaluacionSolicitudEditionComponent } from './evaluacion-solicitud/eval
 import { EvaluacionSolicitudListComponent } from './evaluacion-solicitud/evaluacion-solicitud-list/evaluacion-solicitud-list.component';
 import { RemoveEvaluacionSolicitudComponent } from './evaluacion-solicitud/remove-evaluacion-solicitud/remove-evaluacion-solicitud.component';
 import { SolicitudJuradoCreationComponent } from './solicitud-jurado/solicitud-jurado-creation/solicitud-jurado-creation.component';
-import { EvaluacionSolicitudAceptarComponent } from './evaluacion-solicitud/evaluacion-solicitud-aceptar/evaluacion-solicitud-aceptar.component';
-import { EvaluacionSolicitudRechazarComponent } from './evaluacion-solicitud/evaluacion-solicitud-rechazar/evaluacion-solicitud-rechazar.component';
+import { EvaluacionSolicitudAceptarCreationComponent } from './evaluacion-solicitud/evaluacion-solicitud-aceptar/evaluacion-solicitud-aceptar.component';
+import { EvaluacionSolicitudRechazarCreationComponent } from './evaluacion-solicitud/evaluacion-solicitud-rechazar/evaluacion-solicitud-rechazar.component';
 
 const routes: Routes = [
   {
@@ -100,12 +100,12 @@ const routes: Routes = [
   },
   {
     path:"evaluacion-solicitud-aceptar",
-    component: EvaluacionSolicitudAceptarComponent,
+    component: EvaluacionSolicitudAceptarCreationComponent,
     canActivate: [AuthenticatedGuard]
   },
   {
     path:"evaluacion-solicitud-rechazar",
-    component: EvaluacionSolicitudRechazarComponent,
+    component: EvaluacionSolicitudRechazarCreationComponent,
     canActivate: [AuthenticatedGuard]
   },
   {
