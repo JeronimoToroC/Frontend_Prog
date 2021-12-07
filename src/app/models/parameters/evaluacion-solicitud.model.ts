@@ -8,4 +8,5 @@ export class EvaluacionSolicitudModel {
     fechaRespuesta?: string;
     respuesta?: boolean;
     observaciones?: string;
+    fechaInvitacion?: string;
 }

@@ -9,8 +9,8 @@ declare const ShowGeneralMessage: any;
 
 @Component({
   selector: 'app-evaluacion-solicitud-rechazar',
-  templateUrl: './evaluacion-solicitud--rechazar.component.html',
-  styleUrls: ['./evaluacion-solicitud--rechazar.component.css']
+  templateUrl: './evaluacion-solicitud-rechazar.component.html',
+  styleUrls: ['./evaluacion-solicitud-rechazar.component.css']
 })
 export class EvaluacionSolicitudRechazarCreationComponent implements OnInit {
 

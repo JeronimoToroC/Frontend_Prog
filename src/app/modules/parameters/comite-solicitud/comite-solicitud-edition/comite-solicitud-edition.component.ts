@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ConfigurationData } from 'src/app/config/ConfigurationData';
 import { ComiteSolicitudModel } from 'src/app/models/parameters/comite-solicitud.model';
@@ -22,7 +22,7 @@ export class ComiteSolicitudEditionComponent implements OnInit {
   dataForm: FormGroup = new FormGroup({});
   comiteList: ComiteModel[] = [];
   solicitudList: SolicitudModel[] = [];
-
+  
   constructor(
     private fb: FormBuilder,
     private router: Router,
