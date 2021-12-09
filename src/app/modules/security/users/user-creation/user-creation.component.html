@@ -61,6 +61,15 @@
           Sí
         </label>
       </div>
+      <!--*ngIf="check === true"-->
+      <div class="input-field col s3">
+        <section >
+          <select id="selTipoVinculacion" formControlName="tipoVinculacionId">
+            <option *ngFor="let a of tipoVinculacionList" value="{{a.id}}">{{a.name}}</option>
+          </select>
+          <label style="font-weight: bold; font-size: medium;" for="selTipoVinculacion">Seleccione el tipo de vinculacion</label>
+        </section>
+      </div>
     </div>
     <div class="row">
       <div class="input-field col s12">
