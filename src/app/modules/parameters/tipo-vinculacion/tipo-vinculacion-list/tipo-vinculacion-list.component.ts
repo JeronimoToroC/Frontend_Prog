@@ -23,12 +23,12 @@ export class TipoVinculacionListComponent implements OnInit {
     this.ShowRecordList();
   }
 
-  ShowRecordList(){
+  ShowRecordList() {
     this.service.GetRecordList().subscribe({
       next: (data: TipoVinculacionModel[]) => {
         this.recordList = data;
         this.totalAmount = this.recordList.length;
-      } 
+      }
     });
   }
 

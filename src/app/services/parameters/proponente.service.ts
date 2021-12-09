@@ -11,16 +11,30 @@ import { LocalStorageService } from '../shared/local-storage.service';
 export class ProponenteService {
 
   url: string = ConfigurationData.PRINCIPAL_MS_URL;
-  token:string = this.localStorageService.GetToken();
+  token: string = this.localStorageService.GetToken();
 
   constructor(private http: HttpClient,
-    private localStorageService: LocalStorageService){
+    private localStorageService: LocalStorageService) {
   }
-  GetRecordList(): Observable<ProponenteModel[]>{
+  GetRecordList(): Observable<ProponenteModel[]> {
     return this.http.get<ProponenteModel[]>(`${this.url}/proponentes`, {
       headers: new HttpHeaders({
         "Authorization": `Bearer ${this.token}`
       })
     });
+  }
+
+  SaveRecord(data: ProponenteModel): Observable<ProponenteModel> {
+    return this.http.post<ProponenteModel>(`${this.url}/proponentes`,
+      {
+        name: data.name,
+        lastName: data.lastName,
+        document: data.document,
+        email: data.email,
+        cell: data.cell,
+        rolesId: data.rolesId,
+        foto: data.foto,
+        tipoVinculacionId: 0
+      });
   }
 }

@@ -29,18 +29,18 @@ export class SolicitudCreationComponent implements OnInit {
   dataForm: FormGroup = new FormGroup({});
   lineasInvestlist: LineasInvestigacionModel[] = [];
   modalidadList: ModalidadModel[] = [];
-  tipoSolList: TipoSolicitudModel[] = [];  
+  tipoSolList: TipoSolicitudModel[] = [];
   tipoComList: ComiteModel[] = [];
   mainFormatForm: FormGroup = new FormGroup({});
 
   constructor(
-    private fb:FormBuilder,
+    private fb: FormBuilder,
     private router: Router,
     private service: SolicitudService,
     private lineasInvestService: LineasInvestigacionService,
     private modalidadService: ModalidadService,
     private tipoSolService: TipoSolicitudService,
-    private comiteService: ComiteService,    
+    private comiteService: ComiteService,
   ) { }
 
   ngOnInit(): void {
@@ -55,7 +55,7 @@ export class SolicitudCreationComponent implements OnInit {
     });
   }
 
-  FormBuilding(){
+  FormBuilding() {
     this.dataForm = this.fb.group({
       workName: ["", [Validators.required]],
       description: ["", [Validators.required]],
@@ -68,7 +68,7 @@ export class SolicitudCreationComponent implements OnInit {
     });
   }
 
-  get GetDF (){
+  get GetDF() {
     return this.dataForm.controls;
   }
 
@@ -107,25 +107,25 @@ export class SolicitudCreationComponent implements OnInit {
     });
   }
 
-  SaveRecord(){
+  SaveRecord() {
     let model = new SolicitudModel();
     model.workName = this.GetDF["workName"].value;
     model.description = this.GetDF["description"].value;
     model.dateRad = this.GetDF["dateRad"].value;
     model.file = this.GetDF["file"].value;
-    model.lineasInvestigacionId=parseInt(this.GetDF["lineasInvestigacionId"].value);
-    model.modalidadId=parseInt(this.GetDF["modalidadId"].value);
-    model.tipoSolicitudId=parseInt(this.GetDF["tipoSolicitudId"].value);
+    model.lineasInvestigacionId = parseInt(this.GetDF["lineasInvestigacionId"].value);
+    model.modalidadId = parseInt(this.GetDF["modalidadId"].value);
+    model.tipoSolicitudId = parseInt(this.GetDF["tipoSolicitudId"].value);
     const comiteArray = []
     let comite: ComiteModel = {}
     for (let i = 0; i < this.GetDF["comiteType"].value.length; i++) {
       this.tipoComList.find(e => e.id === parseInt(this.GetDF["comiteType"].value[i]) && (
-          comite = {
-            id: e.id,
-            name: e.name
-          }
-        ))
-        comiteArray.push(comite)       
+        comite = {
+          id: e.id,
+          name: e.name
+        }
+      ))
+      comiteArray.push(comite)
     }
     model.comiteType = comiteArray;
     this.service.SaveRecord(model).subscribe({
@@ -135,19 +135,19 @@ export class SolicitudCreationComponent implements OnInit {
       }
     })
   }
-  
 
-  UploadFile(event:any){
-    if(event.target.files.length > 0){
+
+  UploadFile(event: any) {
+    if (event.target.files.length > 0) {
       const file = event.target.files[0];
       this.mainFormatForm.controls["file"].setValue(file);
     }
   }
 
-  SubmitFileToServer(){
+  SubmitFileToServer() {
     const form = new FormData();
     form.append("file", this.mainFormatForm.controls["file"].value)
-    
+
     this.service.UploadMainFormat(form).subscribe({
       next: (data: UploadFile) => {
         this.dataForm.controls["file"].setValue(data.filename);

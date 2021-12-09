@@ -8,7 +8,7 @@
       </div>
       <div class="row">
         <div class="col s12 center-align">
-          <input class="btn orange" type="file" (change)= "UploadFile($event)" name="file" /> &nbsp; 
+          <input class="btn orange" type="file" (change)= "UploadFile($event)" name="file" /> &nbsp;
 
           <button class=" btn blue" type="button" (click)="SubmitFileToServer()"></button>
 
@@ -33,7 +33,7 @@
           <input formControlName="dateRad" id="dateRad" type="date">
           <label for="dateRad">Fecha</label>
       </div>
-      
+
     </div>
 
     <div class="row">
@@ -47,14 +47,14 @@
         <select id="selModalidad" formControlName="modalidadId">
           <option *ngFor="let a of modalidadList" value="{{a.id}}">{{a.name}}</option>
         </select>
-      <label>Seleccion Modalidad</label>
+        <label>Seleccion Modalidad</label>
       </div>
       <div class="input-field col s12">
         <select id="selTipoSol" formControlName="tipoSolicitudId">
           <option *ngFor="let a of tipoSolList" value="{{a.id}}">{{a.name}}</option>
         </select>
       <label>Seleccion Tipo de Solicitud</label>
-      </div>  
+      </div>
       <div class="input-field col s12">
         <select multiple id="selTipoCom" formControlName="comiteType" type="object">
           <option *ngFor="let a of tipoComList" value="{{a.id}}">{{a.name}}</option>
@@ -68,7 +68,7 @@
       <label>Seleccion Tipo de Cómite</label>
       </div>  -->
     </div>
-    
+
 
     <div class="row">
       <div class="input-field col s12">
