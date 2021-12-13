@@ -59,6 +59,7 @@ import { RemoveEvaluacionSolicitudComponent } from './evaluacion-solicitud/remov
 import { EvaluacionSolicitudAceptarCreationComponent } from './evaluacion-solicitud/evaluacion-solicitud-aceptar/evaluacion-solicitud-aceptar.component';
 import { EvaluacionSolicitudRechazarCreationComponent } from './evaluacion-solicitud/evaluacion-solicitud-rechazar/evaluacion-solicitud-rechazar.component';
 import { SolicitudJuradoCreationComponent } from './solicitud-jurado/solicitud-jurado-creation/solicitud-jurado-creation.component';
+import { SolicitudShowmComponent } from './solicitud/solicitud-showm/solicitud-showm.component';
 
 
 
@@ -118,7 +119,8 @@ import { SolicitudJuradoCreationComponent } from './solicitud-jurado/solicitud-j
     RemoveEvaluacionSolicitudComponent,
     EvaluacionSolicitudAceptarCreationComponent,
     EvaluacionSolicitudRechazarCreationComponent,
-    SolicitudJuradoCreationComponent
+    SolicitudJuradoCreationComponent,
+    SolicitudShowmComponent
 
 
   ],
