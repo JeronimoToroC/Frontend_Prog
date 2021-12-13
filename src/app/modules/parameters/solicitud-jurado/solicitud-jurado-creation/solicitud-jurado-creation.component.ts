@@ -51,8 +51,8 @@ export class SolicitudJuradoCreationComponent implements OnInit {
 
   SaveRecord(){
     let model = new SolicitudJuradoModel();
-    model.juradosId =(this.GetDF["juradosId"].value);
-    model.solicitudId=(this.GetDF["solicitudId"].value);
+    model.juradosId = parseInt(this.GetDF["juradosId"].value);
+    model.solicitudId = parseInt(this.GetDF["solicitudId"].value);
     model.fechaInvitacion = new Date().toLocaleDateString();
     this.service.SaveRecord(model).subscribe({
       next: (data: SolicitudJuradoModel) => {
@@ -81,16 +81,14 @@ export class SolicitudJuradoCreationComponent implements OnInit {
     });
   }
 
-  MensajeInvitation(){
+  /* MensajeInvitation(){
     let model = new SolicitudJuradoModel();
     model.juradosId =(this.GetDF["juradosId"].value);
-    model.linkaceptar = "http://localhost:4200/parameters/";
-    model.linkrechazar = "http://localhost:4200/parameters/";
     this.service.MensajeInvitación(model).subscribe({
       next: (data: SolicitudJuradoModel) => {
         ShowGeneralMessage(ConfigurationData.SAVED_MESSAGE)
         this.router.navigate(["/home"]);
       }
     })
-  }
+  } */
 }

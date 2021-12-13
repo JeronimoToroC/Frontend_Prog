@@ -100,13 +100,11 @@ const routes: Routes = [
   },
   {
     path:"evaluacion-solicitud-aceptar",
-    component: EvaluacionSolicitudAceptarCreationComponent,
-    canActivate: [AuthenticatedGuard]
+    component: EvaluacionSolicitudAceptarCreationComponent
   },
   {
     path:"evaluacion-solicitud-rechazar",
-    component: EvaluacionSolicitudRechazarCreationComponent,
-    canActivate: [AuthenticatedGuard]
+    component: EvaluacionSolicitudRechazarCreationComponent
   },
   {
     path:"remove-evaluacion-solicitud/:id",

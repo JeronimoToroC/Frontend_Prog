@@ -18,15 +18,15 @@ export class SolicitudJuradoService {
   }
 
   GetRecordList(): Observable<SolicitudJuradoModel[]> {
-    return this.http.get<SolicitudJuradoModel[]>(`${this.url}/solicitud-jurados`);
+    return this.http.get<SolicitudJuradoModel[]>(`${this.url}/notificar-jurados`);
   }
 
   SearchRecord(id: number): Observable<SolicitudJuradoModel> {
-    return this.http.get<SolicitudJuradoModel>(`${this.url}/solicitud-jurados/${id}`);
+    return this.http.get<SolicitudJuradoModel>(`${this.url}/notificar-jurados/${id}`);
   }
 
   SaveRecord(data: SolicitudJuradoModel): Observable<SolicitudJuradoModel> {
-    return this.http.post<SolicitudJuradoModel>(`${this.url}/solicitud-jurados`,
+    return this.http.post<SolicitudJuradoModel>(`${this.url}/notificar-jurados`,
       {
         solicitudId: data.solicitudId,
         juradosId: data.juradosId,
@@ -40,7 +40,7 @@ export class SolicitudJuradoService {
   }
 
   EditRecord(data: SolicitudJuradoModel): Observable<SolicitudJuradoModel> {
-    return this.http.put<SolicitudJuradoModel>(`${this.url}/solicitud-jurados/${data.id}`,
+    return this.http.put<SolicitudJuradoModel>(`${this.url}/notificar-jurados/${data.id}`,
       {
         id: data.id,
         solicitudId: data.solicitudId,
@@ -56,7 +56,7 @@ export class SolicitudJuradoService {
 
 
   RemoveRecord(id: number): Observable<any> {
-    return this.http.delete<any>(`${this.url}/solicitud-jurados/${id}`,
+    return this.http.delete<any>(`${this.url}/notificar-jurados/${id}`,
       {
         headers: new HttpHeaders({
           Authorization: `Bearer ${this.tk}`
@@ -67,8 +67,6 @@ export class SolicitudJuradoService {
     return this.http.post<SolicitudJuradoModel>(`${this.url}/recuperar-contrasenia`,
       {
         juradosId: data.juradosId,
-        linkaceptar: data.linkaceptar,
-        linkrechazar: data.linkrechazar,
       });
   }
 }
