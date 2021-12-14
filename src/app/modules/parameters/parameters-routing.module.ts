@@ -61,10 +61,6 @@ import { SolicitudShowmComponent } from './solicitud/solicitud-showm/solicitud-s
 import { EntidadCreationComponent } from './entidad/entidad-creation/entidad-creation.component';
 import { EntidadListComponent } from './entidad/entidad-list/entidad-list.component';
 
-import { SeePdfComponent } from './solicitud/see-pdf/see-pdf.component';
-
-
-
 
 const routes: Routes = [
   {
@@ -153,11 +149,6 @@ const routes: Routes = [
   {
     path:"solicitud-showm/:id",
     component: SolicitudShowmComponent,
-    canActivate: [AuthenticatedGuard]
-  },
-  {
-    path:"see-pdf/:file",
-    component: SeePdfComponent,
     canActivate: [AuthenticatedGuard]
   },
   {
