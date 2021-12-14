@@ -8,5 +8,5 @@ export class JuradosModel {
     cell?: string;
     rolesId?: string;
     foto?: string;
-    entidad?:string;
+    entidadId?: number;
 }

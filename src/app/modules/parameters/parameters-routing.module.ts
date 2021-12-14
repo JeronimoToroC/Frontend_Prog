@@ -57,7 +57,12 @@ import { SolicitudJuradoCreationComponent } from './solicitud-jurado/solicitud-j
 import { EvaluacionSolicitudAceptarCreationComponent } from './evaluacion-solicitud/evaluacion-solicitud-aceptar/evaluacion-solicitud-aceptar.component';
 import { EvaluacionSolicitudRechazarCreationComponent } from './evaluacion-solicitud/evaluacion-solicitud-rechazar/evaluacion-solicitud-rechazar.component';
 import { SolicitudShowmComponent } from './solicitud/solicitud-showm/solicitud-showm.component';
+
+import { EntidadCreationComponent } from './entidad/entidad-creation/entidad-creation.component';
+import { EntidadListComponent } from './entidad/entidad-list/entidad-list.component';
+
 import { SeePdfComponent } from './solicitud/see-pdf/see-pdf.component';
+
 
 
 
@@ -65,6 +70,16 @@ const routes: Routes = [
   {
     path:"jurados-creation",
     component: JuradosCreationComponent,
+    canActivate: [AuthenticatedGuard]
+  },
+  {
+    path:"entidad-creation",
+    component: EntidadCreationComponent,
+    canActivate: [AuthenticatedGuard]
+  },
+  {
+    path:"entidad-list",
+    component: EntidadListComponent,
     canActivate: [AuthenticatedGuard]
   },
   {

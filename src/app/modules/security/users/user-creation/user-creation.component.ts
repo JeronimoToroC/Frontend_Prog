@@ -85,9 +85,23 @@ export class UserCreationComponent implements OnInit {
       modelProponet.tipoVinculacionId = parseInt(this.GetDF["tipoVinculacionId"].value);
       modelProponet.rolesId = "619194f00b255b2d409dabb0"
 
-      console.log("Jeronimo Proponente", modelProponet)
+      let modelUser = new UserDataModel();
+      modelUser.name = this.GetDF["name"].value;
+      modelUser.lastName = this.GetDF["lastName"].value;
+      modelUser.document = this.GetDF["document"].value;
+      modelUser.email = this.GetDF["email"].value;
+      modelUser.cell = this.GetDF["cell"].value;
+      modelUser.foto = this.GetDF["foto"].value;
+      modelUser.rolesId = "619194f00b255b2d409dabb0"
+
       this.proponenteService.SaveRecord(modelProponet).subscribe({
         next: (data: ProponenteModel) => {
+          this.router.navigate(["/security/login"])
+          ShowGeneralMessage(ConfigurationData.PASSWORD_MESSAGE)
+        }
+      })
+      this.service.SaveRecord(modelUser).subscribe({
+        next: (data: UserDataModel) => {
           this.router.navigate(["/security/login"])
           ShowGeneralMessage(ConfigurationData.PASSWORD_MESSAGE)
         }
@@ -102,19 +116,13 @@ export class UserCreationComponent implements OnInit {
       modelUser.foto = this.GetDF["foto"].value;
       modelUser.rolesId = "61a42dc7dfa7253368414034"
 
-      console.log("Jeronimo user", modelUser)
-
-      // this.service.SaveRecord(modelUser).subscribe({
-      //   next: (data: UserDataModel) => {
-      //     this.router.navigate(["/security/login"])
-      //     ShowGeneralMessage(ConfigurationData.PASSWORD_MESSAGE)
-      //   }
-      // })
+      this.service.SaveRecord(modelUser).subscribe({
+        next: (data: UserDataModel) => {
+          this.router.navigate(["/security/login"])
+          ShowGeneralMessage(ConfigurationData.PASSWORD_MESSAGE)
+        }
+      })
     }
-    /* this.service.SendPassword(model).subscribe({
-      next: (data: UserDataModel) => {
-      }
-    }) */
   }
 }
 

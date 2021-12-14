@@ -34,7 +34,7 @@ export class ProponenteService {
         cell: data.cell,
         rolesId: data.rolesId,
         foto: data.foto,
-        tipoVinculacionId: 0
+        tipoVinculacionId: data.tipoVinculacionId
       });
   }
 }

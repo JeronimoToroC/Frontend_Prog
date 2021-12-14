@@ -2,7 +2,7 @@
     <div class="col s12" *ngFor="let r of recordList">
         <div class="row">
             <div class="input-field col s3">
-                <p>{{r.workname}}</p>
+                <p>{{r.workName}}</p>
                 <label>Nombre del Trabajo</label>
             </div>
             <div class="input-field col s3">
@@ -19,7 +19,7 @@
                 <a class="btn btn-warning orange" routerLink="/parameters/solicitud-showm/{{r.file}}">Visualizar</a>
             </div>
             <div class="input-field col s3">
-                <p>{r.dateRad}}</p>
+                <p>{{r.dateRad}}</p>
                 <label>Fecha</label>
             </div>
         </div>
