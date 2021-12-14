@@ -62,8 +62,6 @@ import { SolicitudJuradoCreationComponent } from './solicitud-jurado/solicitud-j
 import { SolicitudShowmComponent } from './solicitud/solicitud-showm/solicitud-showm.component';
 import { EntidadCreationComponent } from './entidad/entidad-creation/entidad-creation.component';
 import { EntidadListComponent } from './entidad/entidad-list/entidad-list.component';
-import { SeePdfComponent } from './solicitud/see-pdf/see-pdf.component';
-
 
 
 
@@ -127,8 +125,6 @@ import { SeePdfComponent } from './solicitud/see-pdf/see-pdf.component';
     SolicitudShowmComponent,
     EntidadCreationComponent,
     EntidadListComponent
-    SeePdfComponent
-
 
   ],
   imports: [
