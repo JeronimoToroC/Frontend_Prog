@@ -1,0 +1,77 @@
+<div class="general">
+  <form [formGroup]="dataForm" class="col s12">
+    <div class="secondDiv">
+      <h4>Registro de jurado</h4>
+
+      <label style="font-size: medium;" for="foto">Foto de perfil</label>
+      <div class="input-field col s3">
+        <input formControlName="foto" id="foto" type="file">
+      </div>
+
+      <div class="input-field col s3">
+        <input
+          formControlName="name"
+          id="name"
+          type="text"
+        >
+        <label for="name">Nombre</label>
+      </div>
+
+      <div class="input-field col s3">
+        <input
+          formControlName="lastName"
+          id="lastName"
+          type="text"
+        >
+        <label for="lastName">Apellidos</label>
+      </div>
+
+      <div class="input-field col s3">
+        <input
+          formControlName="email"
+          id="email"
+          type="text"
+        >
+        <label for="email">Correo electrónico</label>
+      </div>
+
+      <div class="input-field col s3">
+        <input
+          formControlName="document"
+          id="document"
+          type="text"
+        >
+        <label for="document">Documento de identidad</label>
+      </div>
+
+      <div class="input-field col s3">
+        <input
+          formControlName="cell"
+          id="cell"
+          type="text"
+        >
+        <label for="cell">Teléfono / Celular</label>
+      </div>
+      <div class="input-field col s3">
+        <section >
+          <select id="entidadSelect" formControlName="entidadId">
+            <option *ngFor="let a of entidadList" value="{{a.id}}">{{a.name}}</option>
+          </select>
+          <label style="font-weight: bold; font-size: medium;" for="entidadSelect">Seleccione el tipo de vinculacion</label>
+        </section>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+        <button
+        style="background-color: #063B70; width: 50%; height: 50px; margin-left: auto; left: auto; right: auto;"
+          type="button"
+          class="btn btn-success"
+          (click)="SaveRecord()"
+        >
+        Guardar
+        </button>
+      </div>
+    </div>
+  </form>
+</div>

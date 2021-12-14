@@ -60,6 +60,8 @@ import { EvaluacionSolicitudAceptarCreationComponent } from './evaluacion-solici
 import { EvaluacionSolicitudRechazarCreationComponent } from './evaluacion-solicitud/evaluacion-solicitud-rechazar/evaluacion-solicitud-rechazar.component';
 import { SolicitudJuradoCreationComponent } from './solicitud-jurado/solicitud-jurado-creation/solicitud-jurado-creation.component';
 import { SolicitudShowmComponent } from './solicitud/solicitud-showm/solicitud-showm.component';
+import { EntidadCreationComponent } from './entidad/entidad-creation/entidad-creation.component';
+import { EntidadListComponent } from './entidad/entidad-list/entidad-list.component';
 
 
 
@@ -120,7 +122,9 @@ import { SolicitudShowmComponent } from './solicitud/solicitud-showm/solicitud-s
     EvaluacionSolicitudAceptarCreationComponent,
     EvaluacionSolicitudRechazarCreationComponent,
     SolicitudJuradoCreationComponent,
-    SolicitudShowmComponent
+    SolicitudShowmComponent,
+    EntidadCreationComponent,
+    EntidadListComponent
 
 
   ],
