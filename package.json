@@ -19,6 +19,7 @@
     "@angular/platform-browser-dynamic": "~13.0.0",
     "@angular/router": "~13.0.0",
     "@flatfile/angular": "^3.0.0",
+    "@pdftron/webviewer": "^8.2.0",
     "@types/crypto-js": "^4.0.2",
     "crypto-js": "^4.1.1",
     "materialize-css": "^1.0.0-rc.2",
