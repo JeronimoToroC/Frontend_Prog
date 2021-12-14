@@ -83,8 +83,6 @@ export class JuradosCreationComponent implements OnInit {
       modelUser.foto = this.GetDF["foto"].value;
       modelUser.rolesId = "619194fe0b255b2d409dabb2"
 
-      console.log("Jeronimo modelJurado", modelJurado)
-
       this.service.SaveRecord(modelJurado).subscribe({
         next: (data: JuradosModel) => {
           ShowGeneralMessage(ConfigurationData.SAVED_MESSAGE)
