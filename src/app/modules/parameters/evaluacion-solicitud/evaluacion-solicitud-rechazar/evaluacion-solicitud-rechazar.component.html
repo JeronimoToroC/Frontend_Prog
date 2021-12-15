@@ -1,18 +1,20 @@
 <div class="row">
     <form [formGroup]="dataForm" class="col s12">
+      <div class="switch">
+        <label for="txtDescripcion" style="margin-bottom: 1rem; font-size: 1rem;">¿Está seguro que desea rechazar?</label>
+        <label style="font-size: 1rem;">
+          No
+          <input type="checkbox" id="checkProponente" (click)="checkProp()">
+          <span class="lever"></span>
+          Sí
+        </label>
+      </div>
       <div class="row">
         <div class="input-field col s12">
           <input formControlName="observaciones" id="txtObservaciones" type="text">
           <label for="txtObservaciones">Observaciónes</label>
         </div>
       </div>
-      <label><input type="checkbox" formControlName="cb"> Accept it</label>
-        <div style="color: red; padding-top: 0.2rem" *ngIf="dataForm.hasError('required', 'cb')">
-            Required
-        </div>
-        <hr>
-        <div>
-  </div>
       <div class="row">
         <div class="input-field col s12">
           <button type="button" class="btn btn-success" [disabled]="dataForm.errors" (click)="SaveRecord()">Guardar</button>

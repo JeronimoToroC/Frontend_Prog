@@ -18,12 +18,13 @@ declare const InitSelect: any;
 export class EvaluacionSolicitudAceptarCreationComponent implements OnInit {
 
   dataForm: FormGroup = new FormGroup({});
-  relacionList: SolicitudJuradoModel[] = []
+  relacionList: SolicitudJuradoModel[] = [];
+  check: any = false;
 
   constructor(
-    private fb:FormBuilder,
+    private fb: FormBuilder,
     private router: Router,
-    private service: EvaluacionSolicitudService,    
+    private service: EvaluacionSolicitudService,
     private relacionService: SolicitudJuradoService
   ) { }
 
@@ -32,32 +33,38 @@ export class EvaluacionSolicitudAceptarCreationComponent implements OnInit {
     this.GetDataForSelects();
   }
 
-  FormBuilding(){
+  FormBuilding() {
     this.dataForm = this.fb.group({
-      cb: [false, Validators.requiredTrue]
+      observaciones: ["", [Validators.required]]
     });
-    
+
   }
 
-  get GetDF (){
+  get GetDF() {
     return this.dataForm.controls;
   }
+  checkProp() {
+    this.check = !this.check
+  }
 
-  SaveRecord(){
+  SaveRecord() {
     let model = new EvaluacionSolicitudModel();
     model.observaciones = this.GetDF["observaciones"].value;
-    model.respuesta = true;
+    model.respuesta = this.check;
     model.fechaRespuesta = new Date().toLocaleDateString();
-    //model.notificarJuradoId
-    this.service.SaveRecord(model).subscribe({
-      next: (data: EvaluacionSolicitudModel) => {
-        ShowGeneralMessage(ConfigurationData.SAVED_MESSAGE)
-        this.router.navigate(["/parameters/solicitud-list"]);
-      }
-    })
+    if (model.respuesta === true) {
+      this.service.SaveRecord(model).subscribe({
+        next: (data: EvaluacionSolicitudModel) => {
+          ShowGeneralMessage(ConfigurationData.SAVED_MESSAGE)
+          this.router.navigate(["/parameters/solicitud-list"]);
+        }
+      })
+    } else {
+      alert("Usted no aceptó la invitación")
+      this.router.navigate(["/parameters/solicitud-list"]);
+    }
   }
   GetDataForSelects() {
-    
     this.relacionService.GetRecordList().subscribe({
       next: (data: SolicitudJuradoModel[]) => {
         this.relacionList = data;

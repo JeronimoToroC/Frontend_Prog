@@ -65,301 +65,301 @@ import { RecordarJuradoCreationComponent } from './recordar-jurado/recordar-jura
 
 const routes: Routes = [
   {
-    path:"recordar-jurado-creation",
+    path: "recordar-jurado-creation",
     component: RecordarJuradoCreationComponent,
     canActivate: [AuthenticatedGuard]
   },
   {
-    path:"jurados-creation",
+    path: "jurados-creation",
     component: JuradosCreationComponent,
     canActivate: [AuthenticatedGuard]
   },
   {
-    path:"entidad-creation",
+    path: "entidad-creation",
     component: EntidadCreationComponent,
     canActivate: [AuthenticatedGuard]
   },
   {
-    path:"entidad-list",
+    path: "entidad-list",
     component: EntidadListComponent,
     canActivate: [AuthenticatedGuard]
   },
   {
-    path:"jurados-edition/:id",
+    path: "jurados-edition/:id",
     component: JuradosEditionComponent,
     canActivate: [AuthenticatedGuard]
   },
   {
-    path:"jurados-list",
+    path: "jurados-list",
     component: JuradosListComponent,
     canActivate: [AuthenticatedGuard]
   },
   {
-    path:"remove-jurados/:id",
+    path: "remove-jurados/:id",
     component: RemoveJuradosComponent,
     canActivate: [AuthenticatedGuard]
   },
   {
-    path:"queja-jurados-creation",
+    path: "queja-jurados-creation/",
     component: QuejaJuradosCreationComponent,
     canActivate: [AuthenticatedGuard]
   },
   {
-    path:"solicitud-jurado-creation",
+    path: "solicitud-jurado-creation",
     component: SolicitudJuradoCreationComponent,
     canActivate: [AuthenticatedGuard]
   },
   {
-    path:"evaluacion-solicitud-creation",
+    path: "evaluacion-solicitud-creation",
     component: EvaluacionSolicitudCreationComponent,
     canActivate: [AuthenticatedGuard]
   },
   {
-    path:"evaluacion-solicitud-edition/:id",
+    path: "evaluacion-solicitud-edition/:id",
     component: EvaluacionSolicitudEditionComponent,
     canActivate: [AuthenticatedGuard]
   },
   {
-    path:"evaluacion-solicitud-list",
+    path: "evaluacion-solicitud-list",
     component: EvaluacionSolicitudListComponent,
     canActivate: [AuthenticatedGuard]
   },
   {
-    path:"evaluacion-solicitud-aceptar",
+    path: "evaluacion-solicitud-aceptar/:id",
     component: EvaluacionSolicitudAceptarCreationComponent
   },
   {
-    path:"evaluacion-solicitud-rechazar",
+    path: "evaluacion-solicitud-rechazar/:id",
     component: EvaluacionSolicitudRechazarCreationComponent
   },
   {
-    path:"remove-evaluacion-solicitud/:id",
+    path: "remove-evaluacion-solicitud/:id",
     component: RemoveEvaluacionSolicitudComponent,
     canActivate: [AuthenticatedGuard]
   },
   {
-    path:"solicitud-creation",
+    path: "solicitud-creation",
     component: SolicitudCreationComponent,
     canActivate: [AuthenticatedGuard]
   },
   {
-    path:"solicitud-edition/:id",
+    path: "solicitud-edition/:id",
     component: SolicitudEditionComponent,
     canActivate: [AuthenticatedGuard]
   },
   {
-    path:"solicitud-list",
+    path: "solicitud-list",
     component: SolicitudListComponent,
     canActivate: [AuthenticatedGuard]
   },
   {
-    path:"remove-solicitud/:id",
+    path: "remove-solicitud/:id",
     component: RemoveSolicitudComponent,
     canActivate: [AuthenticatedGuard]
   },
   {
-    path:"solicitud-showm/:id",
+    path: "solicitud-showm/:id",
     component: SolicitudShowmComponent,
     canActivate: [AuthenticatedGuard]
   },
   {
-    path:"comite-creation",
+    path: "comite-creation",
     component: ComiteCreationComponent,
     canActivate: [AuthenticatedGuard]
   },
   {
-    path:"comite-edition/:id",
+    path: "comite-edition/:id",
     component: ComiteEditionComponent,
     canActivate: [AuthenticatedGuard]
   },
   {
-    path:"comite-list",
+    path: "comite-list",
     component: ComiteListComponent,
     canActivate: [AuthenticatedGuard]
   },
   {
-    path:"remove-comite/:id",
+    path: "remove-comite/:id",
     component: RemoveComiteComponent,
     canActivate: [AuthenticatedGuard]
   },
   {
-    path:"modalidad-creation",
+    path: "modalidad-creation",
     component: ModalidadCreationComponent,
     canActivate: [AuthenticatedGuard]
   },
   {
-    path:"modalidad-edition/:id",
+    path: "modalidad-edition/:id",
     component: ModalidadEditionComponent,
     canActivate: [AuthenticatedGuard]
   },
   {
-    path:"modalidad-list",
+    path: "modalidad-list",
     component: ModalidadListComponent,
     canActivate: [AuthenticatedGuard]
   },
   {
-    path:"remove-modalidad/:id",
+    path: "remove-modalidad/:id",
     component: RemoveModalidadComponent,
     canActivate: [AuthenticatedGuard]
   },
   {
-    path:"proponente-creation",
+    path: "proponente-creation",
     component: ProponenteCreationComponent,
     canActivate: [AuthenticatedGuard]
   },
   {
-    path:"proponente-edition/:id",
+    path: "proponente-edition/:id",
     component: ProponenteEditionComponent,
     canActivate: [AuthenticatedGuard]
   },
   {
-    path:"proponente-list",
+    path: "proponente-list",
     component: ProponenteListComponent,
     canActivate: [AuthenticatedGuard]
   },
   {
-    path:"remove-proponente/:id",
+    path: "remove-proponente/:id",
     component: RemoveProponenteComponent,
     canActivate: [AuthenticatedGuard]
   },
   {
-    path:"departamento-creation",
+    path: "departamento-creation",
     component: DepartamentoCreationComponent,
     canActivate: [AuthenticatedGuard]
   },
   {
-    path:"departamento-edition/:id",
+    path: "departamento-edition/:id",
     component: DepartamentoEditionComponent,
     canActivate: [AuthenticatedGuard]
   },
   {
-    path:"departamento-list",
+    path: "departamento-list",
     component: DepartamentoListComponent,
     canActivate: [AuthenticatedGuard]
   },
   {
-    path:"remove-departamento/:id",
+    path: "remove-departamento/:id",
     component: RemoveDepartamentoComponent,
     canActivate: [AuthenticatedGuard]
   },
   {
-    path:"facultad-creation",
+    path: "facultad-creation",
     component: FacultadCreationComponent,
     canActivate: [AuthenticatedGuard]
   },
   {
-    path:"facultad-edition/:id",
+    path: "facultad-edition/:id",
     component: FacultadEditionComponent,
     canActivate: [AuthenticatedGuard]
   },
   {
-    path:"facultad-list",
+    path: "facultad-list",
     component: FacultadListComponent,
     canActivate: [AuthenticatedGuard]
   },
   {
-    path:"remove-facultad/:id",
+    path: "remove-facultad/:id",
     component: RemoveFacultadComponent,
     canActivate: [AuthenticatedGuard]
   },
   {
-    path:"lineas-investigacion-creation",
+    path: "lineas-investigacion-creation",
     component: LineasInvestigacionCreationComponent,
     canActivate: [AuthenticatedGuard]
   },
   {
-    path:"lineas-investigacion-edition/:id",
+    path: "lineas-investigacion-edition/:id",
     component: LineasInvestigacionEditionComponent,
     canActivate: [AuthenticatedGuard]
   },
   {
-    path:"lineas-investigacion-list",
+    path: "lineas-investigacion-list",
     component: LineasInvestigacionListComponent,
     canActivate: [AuthenticatedGuard]
   },
   {
-    path:"remove-lineas-investigacion/:id",
+    path: "remove-lineas-investigacion/:id",
     component: RemoveLineasInvestigacionComponent,
     canActivate: [AuthenticatedGuard]
   },
   {
-    path:"tipo-vinculacion-creation",
+    path: "tipo-vinculacion-creation",
     component: TipoVinculacionCreationComponent,
     canActivate: [AuthenticatedGuard]
   },
   {
-    path:"tipo-vinculacion-edition/:id",
+    path: "tipo-vinculacion-edition/:id",
     component: TipoVinculacionEditionComponent,
     canActivate: [AuthenticatedGuard]
   },
   {
-    path:"tipo-vinculacion-list",
+    path: "tipo-vinculacion-list",
     component: TipoVinculacionListComponent,
     canActivate: [AuthenticatedGuard]
   },
   {
-    path:"remove-tipo-vinculacion/:id",
+    path: "remove-tipo-vinculacion/:id",
     component: RemoveTipoVinculacionComponent,
     canActivate: [AuthenticatedGuard]
   },
   {
-    path:"tipo-solicitud-creation",
+    path: "tipo-solicitud-creation",
     component: TipoSolicitudCreationComponent,
     canActivate: [AuthenticatedGuard]
   },
   {
-    path:"tipo-solicitud-edition/:id",
+    path: "tipo-solicitud-edition/:id",
     component: TipoSolicitudEditionComponent,
     canActivate: [AuthenticatedGuard]
   },
   {
-    path:"tipo-solicitud-list",
+    path: "tipo-solicitud-list",
     component: TipoSolicitudListComponent,
     canActivate: [AuthenticatedGuard]
   },
   {
-    path:"remove-tipo-solicitud/:id",
+    path: "remove-tipo-solicitud/:id",
     component: RemoveTipoSolicitudComponent,
     canActivate: [AuthenticatedGuard]
   },
   {
-    path:"comite-solicitud-creation",
+    path: "comite-solicitud-creation",
     component: ComiteSolicitudCreationComponent,
     canActivate: [AuthenticatedGuard]
   },
   {
-    path:"comite-solicitud-edition/:id",
+    path: "comite-solicitud-edition/:id",
     component: ComiteSolicitudEditionComponent,
     canActivate: [AuthenticatedGuard]
   },
   {
-    path:"comite-solicitud-list",
+    path: "comite-solicitud-list",
     component: ComiteSolicitudListComponent,
     canActivate: [AuthenticatedGuard]
   },
   {
-    path:"remove-comite-solicitud/:id",
+    path: "remove-comite-solicitud/:id",
     component: RemoveComiteSolicitudComponent,
     canActivate: [AuthenticatedGuard]
   },
   {
-    path:"modalidad-photos",
+    path: "modalidad-photos",
     component: ModalidadPhotosComponent,
     canActivate: [AuthenticatedGuard]
   },
   {
-    path:"proponente-photos",
+    path: "proponente-photos",
     component: ProponentePhotosComponent,
     canActivate: [AuthenticatedGuard]
   },
   {
-    path:"departamento-photos",
+    path: "departamento-photos",
     component: DepartamentoPhotosComponent,
     canActivate: [AuthenticatedGuard]
   },
   {
-    path:"facultad-photos",
-    component:FacultadPhotosComponent,
+    path: "facultad-photos",
+    component: FacultadPhotosComponent,
     canActivate: [AuthenticatedGuard]
   },
 ];
