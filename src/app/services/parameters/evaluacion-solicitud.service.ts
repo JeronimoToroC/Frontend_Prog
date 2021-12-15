@@ -28,8 +28,6 @@ export class EvaluacionSolicitudService {
   SaveRecord(data: EvaluacionSolicitudModel): Observable<EvaluacionSolicitudModel> {
     return this.http.post<EvaluacionSolicitudModel>(`${this.url}/evaluacion-solicituds`,
       {
-        solicitudId: data.solicitudId,
-        juradosId: data.juradosId,
         fechaRespuesta: data.fechaRespuesta,
         respuesta: data.respuesta,
         observaciones: data.observaciones
@@ -45,8 +43,6 @@ export class EvaluacionSolicitudService {
     return this.http.put<EvaluacionSolicitudModel>(`${this.url}/evaluacion-solicituds/${data.id}`,
       {
         id: data.id,
-        solicitudId: data.solicitudId,
-        juradosId: data.juradosId,
         fechaRespuesta: data.fechaRespuesta,
         respuesta: data.respuesta,
         observaciones: data.observaciones

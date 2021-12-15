@@ -6,18 +6,27 @@
           <label for="txtObservaciones">Observaciónes</label>
         </div>
       </div>
-      <label><input type="checkbox" formControlName="cb"> Accept it</label>
+      <label><input type="checkbox" formControlName="cb"> Confirmar</label>
         <div style="color: red; padding-top: 0.2rem" *ngIf="dataForm.hasError('required', 'cb')">
             Required
         </div>
         <hr>
-        <div>
-  </div>
+        <div class="row">        
+          <div class="input-field col s12">
+            <select id="selRelacion" formControlName="notificarJuradoId">
+                <option *ngFor="let c of relacionList" value="{{c.id}}">{{c.fechaInvitacion}}</option>
+            </select>
+            <label>Seleccion de Relacion</label>
+          </div>
+        </div>
       <div class="row">
         <div class="input-field col s12">
           <button type="button" class="btn btn-success" [disabled]="dataForm.invalid" (click)="SaveRecord()">Guardar</button>
           &nbsp;<a class="btn btn-warning orange" routerLink="/parameters/comite-list">Cancelar</a>
         </div>
       </div>
+
+      
+
     </form>
   </div>

@@ -61,9 +61,14 @@ import { EntidadCreationComponent } from './entidad/entidad-creation/entidad-cre
 import { EntidadListComponent } from './entidad/entidad-list/entidad-list.component';
 import { QuejaJuradosCreationComponent } from './jurados/queja-jurados-creation/queja-jurados-creation.component';
 
-
+import { RecordarJuradoCreationComponent } from './recordar-jurado/recordar-jurado-creation/recordar-jurado-creation.component';
 
 const routes: Routes = [
+  {
+    path:"recordar-jurado-creation",
+    component: RecordarJuradoCreationComponent,
+    canActivate: [AuthenticatedGuard]
+  },
   {
     path:"jurados-creation",
     component: JuradosCreationComponent,

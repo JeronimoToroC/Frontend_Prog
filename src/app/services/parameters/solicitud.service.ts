@@ -35,9 +35,11 @@ export class SolicitudService {
         dateRad: data.dateRad,
         lineasInvestigacionId: data.lineasInvestigacionId,
         modalidadId: data.modalidadId,
-        tipoSolicitudId: data.tipoSolicitudId
+        tipoSolicitudId: data.tipoSolicitudId,
+        proponenteId: data.proponenteId
       });
   }
+
 
   EditRecord(data: SolicitudModel): Observable<SolicitudModel> {
     return this.http.put<SolicitudModel>(`${this.url}/solicituds/${data.id}`,
