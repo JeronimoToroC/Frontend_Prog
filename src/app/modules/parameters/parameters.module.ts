@@ -128,7 +128,7 @@ import { RecordarJuradoCreationComponent } from './recordar-jurado/recordar-jura
     SolicitudShowmComponent,
     EntidadCreationComponent,
     EntidadListComponent,
-    QuejaJuradosCreationComponent
+    QuejaJuradosCreationComponent,
     RecordarJuradoCreationComponent
 
   ],
