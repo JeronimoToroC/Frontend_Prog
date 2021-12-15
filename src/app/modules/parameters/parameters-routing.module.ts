@@ -59,6 +59,8 @@ import { EvaluacionSolicitudRechazarCreationComponent } from './evaluacion-solic
 import { SolicitudShowmComponent } from './solicitud/solicitud-showm/solicitud-showm.component';
 import { EntidadCreationComponent } from './entidad/entidad-creation/entidad-creation.component';
 import { EntidadListComponent } from './entidad/entidad-list/entidad-list.component';
+import { QuejaJuradosCreationComponent } from './jurados/queja-jurados-creation/queja-jurados-creation.component';
+
 import { RecordarJuradoCreationComponent } from './recordar-jurado/recordar-jurado-creation/recordar-jurado-creation.component';
 
 const routes: Routes = [
@@ -95,6 +97,11 @@ const routes: Routes = [
   {
     path:"remove-jurados/:id",
     component: RemoveJuradosComponent,
+    canActivate: [AuthenticatedGuard]
+  },
+  {
+    path:"queja-jurados-creation",
+    component: QuejaJuradosCreationComponent,
     canActivate: [AuthenticatedGuard]
   },
   {
