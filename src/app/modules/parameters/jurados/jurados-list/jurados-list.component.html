@@ -3,10 +3,15 @@
 
 <fieldset>
     <legend>Listado de Jurados</legend>
+    <div>
+        <div >
+            <a class="btn btn-warning black" routerLink="/parameters/recordar-jurado-creation">Notificar Jurado</a>
+        </div>
+    </div>
     <table>
         <thead>
             <tr>
-
+                
                 <th>
                     id
                 </th>
@@ -14,7 +19,7 @@
                     Nombre
                 </th>
                 <th>
-                    Acciones
+                    Recordatorio
                 </th>
             </tr>
         </thead>
@@ -25,8 +30,10 @@
                 </td>
                 <td>
                     {{r.name}}
+                    {{r.lastName}}
                 </td>
                 <td>
+                    
                 </td>
             </tr>
         </tbody>

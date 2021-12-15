@@ -50,9 +50,6 @@ export class EvaluacionSolicitudCreationComponent implements OnInit {
   SaveRecord(){
     let model = new EvaluacionSolicitudModel();
     model.respuesta = false;
-    model.juradosId =(this.GetDF["juradosId"].value);
-    model.solicitudId=(this.GetDF["solicitudId"].value);
-    model.fechaInvitacion = new Date().toLocaleDateString();
     this.service.SaveRecord(model).subscribe({
       next: (data: EvaluacionSolicitudModel) => {
         ShowGeneralMessage(ConfigurationData.SAVED_MESSAGE)
