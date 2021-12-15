@@ -57,9 +57,10 @@ import { SolicitudJuradoCreationComponent } from './solicitud-jurado/solicitud-j
 import { EvaluacionSolicitudAceptarCreationComponent } from './evaluacion-solicitud/evaluacion-solicitud-aceptar/evaluacion-solicitud-aceptar.component';
 import { EvaluacionSolicitudRechazarCreationComponent } from './evaluacion-solicitud/evaluacion-solicitud-rechazar/evaluacion-solicitud-rechazar.component';
 import { SolicitudShowmComponent } from './solicitud/solicitud-showm/solicitud-showm.component';
-
 import { EntidadCreationComponent } from './entidad/entidad-creation/entidad-creation.component';
 import { EntidadListComponent } from './entidad/entidad-list/entidad-list.component';
+import { QuejaJuradosCreationComponent } from './jurados/queja-jurados-creation/queja-jurados-creation.component';
+
 
 
 const routes: Routes = [
@@ -91,6 +92,11 @@ const routes: Routes = [
   {
     path:"remove-jurados/:id",
     component: RemoveJuradosComponent,
+    canActivate: [AuthenticatedGuard]
+  },
+  {
+    path:"queja-jurados-creation",
+    component: QuejaJuradosCreationComponent,
     canActivate: [AuthenticatedGuard]
   },
   {
