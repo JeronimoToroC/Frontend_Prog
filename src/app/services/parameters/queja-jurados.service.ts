@@ -18,7 +18,7 @@ export class QuejaJuradosService {
       this.tk = this.localStorageService.GetToken();
   }
   GetRecordList(): Observable<QuejaJuradosModel[]>{
-    return this.http.get<QuejaJuradosModel[]>(`${this.url}/queja-jurados`,{
+    return this.http.get<QuejaJuradosModel[]>(`${this.url}/recordatorio-jurados-queja`,{
       headers: new HttpHeaders({
         "Authorization": `Bearer ${this.tk}`
       })
@@ -26,7 +26,7 @@ export class QuejaJuradosService {
   }
 
   SaveRecord(data: QuejaJuradosModel): Observable<QuejaJuradosModel>{
-    return this.http.post<QuejaJuradosModel>(`${this.url}/queja-jurados`,
+    return this.http.post<QuejaJuradosModel>(`${this.url}/recordatorio-jurados-queja`,
     {
       fecha: data.fecha,
       juradoId: data.juradoId,
@@ -39,12 +39,12 @@ export class QuejaJuradosService {
     });
   }
 
-  MensajeInvitación(data: QuejaJuradosModel): Observable<QuejaJuradosModel> {
+  /* MensajeInvitación(data: QuejaJuradosModel): Observable<QuejaJuradosModel> {
     return this.http.post<QuejaJuradosModel>(`${this.url}/recuperar-contrasenia`,
       {
         fecha: data.fecha,
         juradoId: data.juradoId,
         resumen: data.resumen,
       });
-  }
+  } */
 }
