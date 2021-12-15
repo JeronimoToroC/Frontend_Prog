@@ -14,6 +14,8 @@ import { LineasInvestigacionService } from 'src/app/services/parameters/lineas-i
 import { ModalidadService } from 'src/app/services/parameters/modalidad.service';
 import { SolicitudService } from 'src/app/services/parameters/solicitud.service';
 import { TipoSolicitudService } from 'src/app/services/parameters/tipo-solicitud.service';
+import { UserDataModel } from "src/app/models/security/user-data.model"
+import { SecurityService } from 'src/app/services/shared/security.service';
 
 declare const ShowGeneralMessage: any;
 declare const InitSelect: any;
@@ -32,6 +34,8 @@ export class SolicitudCreationComponent implements OnInit {
   tipoSolList: TipoSolicitudModel[] = [];
   tipoComList: ComiteModel[] = [];
   mainFormatForm: FormGroup = new FormGroup({});
+  userLogedInfo: UserDataModel = {};
+  getInfo: any = {};
 
   constructor(
     private fb: FormBuilder,
@@ -41,14 +45,19 @@ export class SolicitudCreationComponent implements OnInit {
     private modalidadService: ModalidadService,
     private tipoSolService: TipoSolicitudService,
     private comiteService: ComiteService,
+    private securityService: SecurityService
   ) { }
 
   ngOnInit(): void {
     this.FormBuilding();
     this.GetDataForSelects();
     this.FormMainFormat();
+    this.getInfo = this.securityService.GetSessionInfo()
+    this.userLogedInfo = this.getInfo.source._value.usuario
   }
 
+
+  
   FormMainFormat() {
     this.mainFormatForm = this.fb.group({
       file: ["", []]
@@ -116,6 +125,7 @@ export class SolicitudCreationComponent implements OnInit {
     model.lineasInvestigacionId = parseInt(this.GetDF["lineasInvestigacionId"].value);
     model.modalidadId = parseInt(this.GetDF["modalidadId"].value);
     model.tipoSolicitudId = parseInt(this.GetDF["tipoSolicitudId"].value);
+    model.proponenteId = this.userLogedInfo._id;
     const comiteArray = []
     let comite: ComiteModel = {}
     for (let i = 0; i < this.GetDF["comiteType"].value.length; i++) {

@@ -1,5 +1,4 @@
 import { ComiteModel } from "./comite.model"
-import { ProponenteModel } from "./proponente.model";
 export class SolicitudModel {
   id?: number;
   dateRad?: string;
@@ -10,5 +9,5 @@ export class SolicitudModel {
   lineasInvestigacionId?: number;
   modalidadId?: number;
   tipoSolicitudId?: number;
-  proponenteId?: ProponenteModel;
+  proponenteId?: string;
 }
