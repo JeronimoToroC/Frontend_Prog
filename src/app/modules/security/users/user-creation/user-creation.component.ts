@@ -8,6 +8,8 @@ import { UserDataModel } from 'src/app/models/security/user-data.model';
 import { ProponenteService } from 'src/app/services/parameters/proponente.service';
 import { TipoVinculacionService } from 'src/app/services/parameters/tipo-vinculacion.service';
 import { UsuariosService } from 'src/app/services/parameters/usuarios.service';
+import { UploadFile } from 'src/app/models/parameters/uploaded.file.model';
+
 
 declare const ShowGeneralMessage: any;
 declare const InitSelect: any;
@@ -19,9 +21,14 @@ declare const InitSelect: any;
 })
 export class UserCreationComponent implements OnInit {
 
+  uploadedPhoto: boolean = false;
+  mainPhotoForm: FormGroup = new FormGroup({});
+  uploadedFilename?: string = "";
   dataForm: FormGroup = new FormGroup({});
   check: any = false;
   tipoVinculacionList: TipoVinculacionModel[] = [];
+  url_server: string = ConfigurationData.PRINCIPAL_MS_URL;
+
 
   constructor(
     private fb: FormBuilder,
@@ -32,8 +39,9 @@ export class UserCreationComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.GetDataForSelects();
     this.FormBuilding();
+    this.FormMainPhoto();
+    this.GetDataForSelects();
   }
   FormBuilding() {
     this.dataForm = this.fb.group({
@@ -43,7 +51,14 @@ export class UserCreationComponent implements OnInit {
       email: ["", [Validators.required]],
       cell: ["", [Validators.required]],
       foto: ["", [Validators.required]],
-      tipoVinculacionId: [0, [Validators.required]]
+      tipoVinculacionId: [0, [Validators.required]],
+      foto_principal: ["", [Validators.required]]
+    });
+  }
+
+  FormMainPhoto() {
+    this.mainPhotoForm = this.fb.group({
+      file: ["", []]
     });
   }
 
@@ -73,6 +88,25 @@ export class UserCreationComponent implements OnInit {
     });
   }
 
+  UploadPhoto(event: any) {
+    if (event.target.files.length > 0) {
+      const file = event.target.files[0];
+      this.mainPhotoForm.controls["file"].setValue(file);
+    }
+  }
+
+  SubmitFileToServer() {
+    const form = new FormData();
+    form.append("file", this.mainPhotoForm.controls["file"].value)
+    this.service.UploadMainPhoto(form).subscribe({
+      next: (data: UploadFile) => {
+        this.dataForm.controls["foto_principal"].setValue(data.filename);
+        this.uploadedPhoto = true;
+        this.uploadedFilename = data.filename
+      }
+    });
+  }
+
   SaveRecord() {
     if (this.check == true) {
       let modelProponet = new ProponenteModel();
@@ -83,7 +117,9 @@ export class UserCreationComponent implements OnInit {
       modelProponet.cell = this.GetDF["cell"].value;
       modelProponet.foto = this.GetDF["foto"].value;
       modelProponet.tipoVinculacionId = parseInt(this.GetDF["tipoVinculacionId"].value);
-      modelProponet.rolesId = "619194f00b255b2d409dabb0"
+      modelProponet.rolesId = "619194f00b255b2d409dabb0";
+      modelProponet.foto_principal = this.GetDF["foto_principal"].value;
+
 
       let modelUser = new UserDataModel();
       modelUser.name = this.GetDF["name"].value;

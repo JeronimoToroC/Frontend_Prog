@@ -3,10 +3,18 @@
     <div class="secondDiv">
       <h4>Registro de usuario</h4>
 
-      <label style="font-size: medium;" for="foto">Foto de perfil</label>
-      <div class="input-field col s3">
-        <input formControlName="foto" id="foto" type="file">
+      <div class="row">
+        <div class="col s12 center-align">
+            <img *ngIf="!uploadedPhoto" src="assets/images/no-file-found.jpg" class="vehiclePhoto center-align">
+            <img *ngIf="uploadedPhoto" src="{{url_server}}/archivo/1/{{uploadedFilename}}" class="vehiclePhoto center-align">
+        </div>
       </div>
+    <div class="row">
+        <div class="col s12 center-align">
+            <input class="btn orange" type="file" (change)="UploadPhoto($event)" name="image"  /> 
+            &nbsp;<button class="btn btn-success " type="button" (click)="SubmitFileToServer()" > Cargar Foto</button>
+        </div>
+    </div>
 
       <div class="input-field col s3">
         <input
