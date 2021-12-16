@@ -4,6 +4,8 @@ import { Observable } from 'rxjs';
 import { ConfigurationData } from 'src/app/config/ConfigurationData';
 import { ProponenteModel } from 'src/app/models/parameters/proponente.model';
 import { LocalStorageService } from '../shared/local-storage.service';
+import { UploadFile } from 'src/app/models/parameters/uploaded.file.model';
+
 
 @Injectable({
   providedIn: 'root'
@@ -37,4 +39,14 @@ export class ProponenteService {
         tipoVinculacionId: data.tipoVinculacionId
       });
   }
+
+  UploadMainFormat(form: FormData): Observable<UploadFile> {
+    return this.http.post<UploadFile>(`${this.url}/CargarDocumento`,
+   
+    form,
+    {
+    })
+
+  }
+
 }
