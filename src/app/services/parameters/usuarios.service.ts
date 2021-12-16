@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { ConfigurationData } from 'src/app/config/ConfigurationData';
 import { UserDataModel } from 'src/app/models/security/user-data.model';
 import { LocalStorageService } from '../shared/local-storage.service';
+import { UploadFile } from 'src/app/models/parameters/uploaded.file.model';
 
 @Injectable({
   providedIn: 'root'
@@ -63,5 +64,15 @@ export class UsuariosService {
 
   } */
 
+  UploadMainPhoto(form: FormData): Observable<UploadFile> {
+    return this.http.post<UploadFile>(
+      `${this.url}/CargarImagenPrincipalVehiculo`,
+      form,
+      {
+        headers: new HttpHeaders({
+          Authorization: `Bearer ${this.tk}`
+        })
+      });
+  }
 }
 

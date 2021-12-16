@@ -12,4 +12,5 @@ export class ProponenteModel {
     foto?: string;
     tipoVinculacionId?: number;
     solicituds?: SolicitudModel[];
+    foto_principal?: string;
 }
