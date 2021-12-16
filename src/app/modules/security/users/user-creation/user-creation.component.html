@@ -1,17 +1,37 @@
 <div class="general">
+
+  <div class="row">
+    <form  [formGroup]="mainFormatForm" class="col s12">
+      <div class="row">
+        <div class="col s12 center-align">
+          <img *ngIf="!uploadedFile"  src="assets/images/no-file-found.png" class="noFileImage">
+          <img *ngIf="uploadedFile" src="assets/images/check-blue.png" class="noFileImage">
+        </div>
+        <div class="row">
+          <div class="col s12 center-align">
+            <input class="btn orange" type="file" (change)= "UploadFile($event)" name="file" /> &nbsp;
+  
+            <button class=" btn blue" type="button" (click)="SubmitFileToServer()"></button>
+  
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+  
   <form [formGroup]="dataForm" class="col s12">
     <div class="secondDiv">
       <h4>Registro de usuario</h4>
 
       <div class="row">
         <div class="col s12 center-align">
-            <img *ngIf="!uploadedPhoto" src="assets/images/no-file-found.jpg" class="vehiclePhoto center-align">
-            <img *ngIf="uploadedPhoto" src="{{url_server}}/archivo/1/{{uploadedFilename}}" class="vehiclePhoto center-align">
+            <img *ngIf="!uploadedFile" src="assets/images/no-file-found.jpg" class="vehiclePhoto center-align">
+            <img *ngIf="uploadedFile" src="{{url_server}}/archivo/1/{{uploadedFilename}}" class="vehiclePhoto center-align">
         </div>
       </div>
     <div class="row">
         <div class="col s12 center-align">
-            <input class="btn orange" type="file" (change)="UploadPhoto($event)" name="image"  /> 
+            <input class="btn orange" type="file" (change)="UploadFile($event)" name="image"  /> 
             &nbsp;<button class="btn btn-success " type="button" (click)="SubmitFileToServer()" > Cargar Foto</button>
         </div>
     </div>

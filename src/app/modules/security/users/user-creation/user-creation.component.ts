@@ -21,8 +21,8 @@ declare const InitSelect: any;
 })
 export class UserCreationComponent implements OnInit {
 
-  uploadedPhoto: boolean = false;
-  mainPhotoForm: FormGroup = new FormGroup({});
+  uploadedFile: boolean = false;
+  mainFormatForm: FormGroup = new FormGroup({});
   uploadedFilename?: string = "";
   dataForm: FormGroup = new FormGroup({});
   check: any = false;
@@ -40,7 +40,7 @@ export class UserCreationComponent implements OnInit {
 
   ngOnInit(): void {
     this.FormBuilding();
-    this.FormMainPhoto();
+    this.FormMainFormat();
     this.GetDataForSelects();
   }
   FormBuilding() {
@@ -56,8 +56,8 @@ export class UserCreationComponent implements OnInit {
     });
   }
 
-  FormMainPhoto() {
-    this.mainPhotoForm = this.fb.group({
+  FormMainFormat() {
+    this.mainFormatForm = this.fb.group({
       file: ["", []]
     });
   }
@@ -88,20 +88,20 @@ export class UserCreationComponent implements OnInit {
     });
   }
 
-  UploadPhoto(event: any) {
+  UploadFile(event: any) {
     if (event.target.files.length > 0) {
       const file = event.target.files[0];
-      this.mainPhotoForm.controls["file"].setValue(file);
+      this.mainFormatForm.controls["file"].setValue(file);
     }
   }
 
   SubmitFileToServer() {
     const form = new FormData();
-    form.append("file", this.mainPhotoForm.controls["file"].value)
+    form.append("file", this.mainFormatForm.controls["file"].value)
     this.service.UploadMainPhoto(form).subscribe({
       next: (data: UploadFile) => {
         this.dataForm.controls["foto_principal"].setValue(data.filename);
-        this.uploadedPhoto = true;
+        this.uploadedFile = true;
         this.uploadedFilename = data.filename
       }
     });
@@ -115,10 +115,9 @@ export class UserCreationComponent implements OnInit {
       modelProponet.document = this.GetDF["document"].value;
       modelProponet.email = this.GetDF["email"].value;
       modelProponet.cell = this.GetDF["cell"].value;
-      modelProponet.foto = this.GetDF["foto"].value;
+      modelProponet.foto = this.GetDF["file"].value;
       modelProponet.tipoVinculacionId = parseInt(this.GetDF["tipoVinculacionId"].value);
       modelProponet.rolesId = "619194f00b255b2d409dabb0";
-      modelProponet.foto_principal = this.GetDF["foto_principal"].value;
 
 
       let modelUser = new UserDataModel();

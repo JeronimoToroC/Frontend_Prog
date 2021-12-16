@@ -9,8 +9,7 @@ export class ProponenteModel {
     email?: string;
     cell?: string;
     rolesId?: string;
-    foto?: string;
+    foto?: any;
     tipoVinculacionId?: number;
     solicituds?: SolicitudModel[];
-    foto_principal?: string;
 }
